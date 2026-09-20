@@ -6,3 +6,6 @@ work/
 iso/profile/packages.x86_64.bak-*
 # VM test
 *.qcow2
+# Bytecode Python (généré par les tests locaux)
+__pycache__/
+*.pyc
