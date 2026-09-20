@@ -17,7 +17,7 @@ Dans WSL Arch :
 
 ```bash
 pacman -Syu --needed base-devel archiso git edk2-ovmf qemu-desktop shellcheck python
-git clone https://github.com/votre-org/archricing ~/archricing
+git clone https://github.com/K0rkkow/archricing ~/archricing
 cd ~/archricing
 git update-index --chmod=+x scripts/*.sh scripts/archricing iso/*.sh iso/airootfs/root/customize_airootfs.sh tests/*.sh
 ./tests/check-tree.sh
@@ -36,7 +36,7 @@ pour le boot test, ou teste l'ISO depuis Windows avec Hyper-V/VirtualBox (UEFI a
 2. Installe Arch (iso officielle), puis dans la VM :
 ```bash
 sudo pacman -Syu --needed base-devel archiso git edk2-ovmf qemu-desktop shellcheck python
-git clone https://github.com/votre-org/archricing ~/archricing
+git clone https://github.com/K0rkkow/archricing ~/archricing
 cd ~/archricing
 ./tests/check-tree.sh && ./tests/validate-packages.sh
 sudo ./scripts/build-iso.sh

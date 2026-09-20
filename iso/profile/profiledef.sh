@@ -3,7 +3,7 @@
 # Usage: mkarchiso -v -w work -o out iso/profile
 iso_name="archricing"
 iso_label="ARCHRICING"
-iso_publisher="ArchRicing Project <https://github.com/votre-org/archricing>"
+iso_publisher="ArchRicing Project <https://github.com/K0rkkow/archricing>"
 iso_application="ArchRicing live/installation media"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"

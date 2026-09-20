@@ -30,10 +30,10 @@ Quelqu'un démarre l'ISO → voit immédiatement le bureau ArchRicing → clique
 ## Démarrage rapide (sur Arch Linux)
 
 ```bash
-git clone https://github.com/votre-org/archricing.git
+git clone https://github.com/K0rkkow/archricing.git
 cd archricing
 ./scripts/build-iso.sh        # build l'ISO -> out/archricing-YYYY.MM.DD-x86_64.iso
-./scripts/test-qemu.sh uefi   # teste en QEMU (UEFI)
+./tests/test-qemu.sh uefi     # teste en QEMU (UEFI)
 ```
 
 Voir [`docs/installation.md`](docs/installation.md),

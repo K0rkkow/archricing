@@ -4,7 +4,7 @@
 
 ```bash
 sudo pacman -S archiso edk2-ovmf qemu-desktop shellcheck
-git clone https://github.com/votre-org/archricing && cd archricing
+git clone https://github.com/K0rkkow/archricing && cd archricing
 ./scripts/build-iso.sh
 # -> out/archricing-YYYY.MM.DD-x86_64.iso + out/SHA256SUMS
 ```

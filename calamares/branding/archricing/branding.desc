@@ -7,9 +7,9 @@ productVersion: "2026.09"
 versionedName: "ArchRicing 2026.09 — Arch, but make it beautiful."
 shortProductName: ArchRicing
 bootloaderEntryName: ArchRicing
-productUrl: https://github.com/votre-org/archricing
-supportUrl: https://github.com/votre-org/archricing/blob/main/docs/troubleshooting.md
-releaseNotesUrl: https://github.com/votre-org/archricing/releases
+productUrl: https://github.com/K0rkkow/archricing
+supportUrl: https://github.com/K0rkkow/archricing/blob/main/docs/troubleshooting.md
+releaseNotesUrl: https://github.com/K0rkkow/archricing/releases
 windowWidth: 980
 windowHeight: 620
 windowExpanding: normal
