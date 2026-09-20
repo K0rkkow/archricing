@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-site-theme="pixel-night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SETTINGS — ArchRicing</title>
+<meta name="description" content="ArchRicing Settings: the graphical personalization center.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/docs.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body data-depth="2" data-page="settings.html" data-prev="fastfetch.html" data-prev-title="FASTFETCH" data-next="software-center.html" data-next-title="SOFTWARE CENTER">
+<canvas id="pxgrid" aria-hidden="true"></canvas>
+<header class="topbar"><div class="topbar-in">
+<a class="skip" href="#content">Skip to content</a>
+<a class="brand" href="../index.html"><img src="../assets/img/logo.svg" alt="ArchRicing logo"><b>ARCH<i>RICING</i></b></a>
+<nav class="navlinks" id="navLinks" aria-label="Main">
+<a href="./" aria-current="page">Docs</a><a href="../index.html#features">Features</a><a href="../download.html">Download</a><a href="../changelog.html">Changelog</a><a href="https://github.com/K0rkkow/archricing">GitHub</a>
+<button class="px-iconbtn" data-search-open="1">SEARCH</button>
+<button class="px-iconbtn" id="themeToggle">THEME</button>
+<a href="../fr/" hreflang="fr">FR</a>
+<a class="px-btn hot" href="../download.html">GET</a>
+</nav>
+<button class="px-iconbtn hamburger" id="menuBtn" aria-label="Menu" aria-expanded="false">MENU</button>
+</div></header>
+<main id="content"><div class="doc-layout">
+<button class="px-iconbtn" id="docSideToggle">CONTENTS</button>
+<aside class="doc-side" id="docSide" aria-label="Docs"></aside>
+<div class="doc">
+<h1>SETTINGS <span class="status ok">Implemented</span></h1>
+<p><code>apps/settings/app.py</code> (Tkinter, zero dependencies — shipped, never launched on Plasma). Backs up before writing; prefer it over hand-editing.</p>
+<h2>Tabs</h2>
+<ul><li><strong>Appearance</strong> — 7 theme buttons.</li><li><strong>Terminal</strong> — transparency slider + blur toggle.</li><li><strong>Windows</strong> — wobbly OFF/SUBTLE/NORMAL/PLAYFUL.</li><li><strong>System</strong> — Reset (backup), Diagnose, Security opt-in notice.</li></ul>
+<nav class="pager" id="docPager"></nav>
+</div>
+<aside class="doc-toc" id="docToc" aria-label="On this page"></aside>
+</div></main>
+<footer><div class="foot">
+<div><p class="big">ARCHRICING</p><p style="color:var(--mut)">“Your Arch. Your desktop.”</p></div>
+<div><h4>Site</h4><a href="./">Documentation</a><a href="../download.html">Download</a><a href="../changelog.html">Changelog</a><a href="../about.html">About</a></div>
+<div><h4>Project</h4><a href="https://github.com/K0rkkow/archricing">GitHub</a><a href="contributing.html">Contributing</a><a href="faq.html">FAQ</a></div>
+<div><h4>Docs</h4><a href="getting-started.html">Getting started</a><a href="building.html">Building</a><a href="security.html">Security</a></div>
+</div>
+<div class="legal">© 2026 ArchRicing contributors · GPL-3.0 · Wallpapers CC-BY-SA-4.0<br>ArchRicing is an independent project and is not affiliated with or endorsed by Arch Linux.</div></footer>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/themes.js"></script>
+<script src="../assets/js/search.js"></script>
+<script src="../assets/js/docs.js"></script>
+<script src="../assets/data/search-index.js"></script>
+</body>
+</html>

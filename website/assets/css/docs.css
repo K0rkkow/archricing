@@ -1,0 +1,40 @@
+/* ============ docs.css — documentation zone: dark, pixel, readable ============ */
+.doc-layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:260px minmax(0,1fr) 220px;gap:1.6rem;padding:1.6rem 1rem 3rem}
+.doc-side{position:sticky;top:78px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;background:var(--panel);border:3px solid var(--line);padding:.9rem}
+.doc-side h3{font-size:.72rem;color:var(--mut);text-transform:uppercase;letter-spacing:.12em;margin:1rem 0 .35rem}
+.doc-side h3:first-child{margin-top:0}
+.doc-side a{display:block;padding:.28rem .55rem;color:var(--mut);text-decoration:none;font-size:.9rem;border-left:3px solid transparent}
+.doc-side a:hover{color:var(--ink)}
+.doc-side a.active{color:var(--ink);border-left-color:var(--pink);background:var(--panel2)}
+.doc-toc{position:sticky;top:78px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;font-size:.85rem;font-family:var(--font-mono)}
+.doc-toc a{display:block;color:var(--mut);text-decoration:none;padding:.12rem 0 .12rem .7rem;border-left:3px solid var(--line)}
+.doc-toc a.l3{padding-left:1.5rem}
+.doc h1{font-size:2rem;text-shadow:3px 3px 0 var(--violet)}
+.doc h2{font-size:1.35rem;margin-top:2.2rem;padding-top:.8rem;border-top:3px dashed var(--line)}
+.doc h3{font-size:1.05rem;color:var(--cyan)}
+.doc table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.92rem}
+.doc th,.doc td{text-align:left;padding:.5rem .65rem;border:2px solid var(--line)}
+.doc th{background:var(--panel2);font-family:var(--font-mono);font-size:.8rem;text-transform:uppercase;color:var(--mut)}
+.doc p code,.doc li code,.doc td code{background:var(--panel2);border:1px solid var(--line);padding:.05rem .35rem;font-family:var(--font-mono);font-size:.85em}
+.doc pre{background:#050508;border:3px solid var(--line);padding:1rem;overflow:auto;position:relative;font-family:var(--font-mono);font-size:.86rem}
+.doc pre .copy-btn{position:absolute;top:.45rem;right:.45rem}
+.callout{border:3px solid var(--line);padding:.85rem 1rem;margin:1.1rem 0;background:var(--panel)}
+.callout.note{border-color:var(--cyan)}.callout.warn{border-color:var(--pink);background:#1c0d14}
+.callout.tip{border-color:var(--green)}
+.callout b.tag{font-family:var(--font-mono);font-size:.75rem;display:inline-block;border:2px solid currentColor;padding:0 .45rem;margin-right:.5rem;text-transform:uppercase}
+.callout.note b.tag{color:var(--cyan)}.callout.warn b.tag{color:var(--pink)}.callout.tip b.tag{color:var(--green)}
+.status{display:inline-block;font-family:var(--font-mono);font-size:.72rem;font-weight:700;border:2px solid;padding:.05rem .55rem;text-transform:uppercase}
+.status.ok{color:var(--green);border-color:var(--green)}
+.status.part{color:var(--yellow);border-color:var(--yellow)}
+.status.plan{color:var(--violet);border-color:var(--violet)}
+.status.no{color:var(--pink);border-color:var(--pink)}
+.doc ol.steps{counter-reset:s;list-style:none;padding:0}
+.doc ol.steps li{counter-increment:s;position:relative;padding-left:2.6rem;margin-bottom:.8rem}
+.doc ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;font-family:var(--font-mono);font-weight:700;color:#0a0a0e;background:var(--accent);padding:.1rem .45rem;border:2px solid var(--ink)}
+.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem}
+.faq-item{border:3px solid var(--line);margin-bottom:.7rem;background:var(--panel)}
+.faq-q{width:100%;background:none;border:0;color:var(--ink);font-family:var(--font-mono);font-size:.95rem;text-align:left;padding:.8rem 1rem;cursor:pointer;display:flex;gap:.7rem;align-items:center}
+.faq-q::before{content:"+";color:var(--accent);font-weight:700}
+.faq-item.open .faq-q::before{content:"–"}
+.faq-a{display:none;padding:0 1rem 1rem;color:var(--mut)}
+.faq-item.open .faq-a{display:block}

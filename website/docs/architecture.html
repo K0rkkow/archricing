@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-site-theme="pixel-night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARCHITECTURE — ArchRicing</title>
+<meta name="description" content="Repository layout and key technologies.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/docs.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body data-depth="2" data-page="architecture.html" data-prev="development.html" data-prev-title="DEVELOPMENT" data-next="contributing.html" data-next-title="CONTRIBUTING">
+<canvas id="pxgrid" aria-hidden="true"></canvas>
+<header class="topbar"><div class="topbar-in">
+<a class="skip" href="#content">Skip to content</a>
+<a class="brand" href="../index.html"><img src="../assets/img/logo.svg" alt="ArchRicing logo"><b>ARCH<i>RICING</i></b></a>
+<nav class="navlinks" id="navLinks" aria-label="Main">
+<a href="./" aria-current="page">Docs</a><a href="../index.html#features">Features</a><a href="../download.html">Download</a><a href="../changelog.html">Changelog</a><a href="https://github.com/K0rkkow/archricing">GitHub</a>
+<button class="px-iconbtn" data-search-open="1">SEARCH</button>
+<button class="px-iconbtn" id="themeToggle">THEME</button>
+<a href="../fr/" hreflang="fr">FR</a>
+<a class="px-btn hot" href="../download.html">GET</a>
+</nav>
+<button class="px-iconbtn hamburger" id="menuBtn" aria-label="Menu" aria-expanded="false">MENU</button>
+</div></header>
+<main id="content"><div class="doc-layout">
+<button class="px-iconbtn" id="docSideToggle">CONTENTS</button>
+<aside class="doc-side" id="docSide" aria-label="Docs"></aside>
+<div class="doc">
+<h1>ARCHITECTURE <span class="status ok">Implemented</span></h1>
+<table><tr><th>Folder</th><th>Role</th></tr>
+<tr><td><code>iso/</code></td><td>archiso profile + airootfs + internal build</td></tr>
+<tr><td><code>calamares/</code></td><td>branding, modules, settings, Experience module</td></tr>
+<tr><td><code>configs/</code></td><td>KDE, Kitty, Fastfetch, Zsh, Starship, SDDM, units, defaults</td></tr>
+<tr><td><code>packages/</code></td><td>core / desktop / personalization / security / aur / editions</td></tr>
+<tr><td><code>scripts/</code></td><td>install, post-install, detect, diagnostics, reset, CLI, menu tools</td></tr>
+<tr><td><code>apps/</code></td><td>settings, welcome, software-center, updates</td></tr>
+<tr><td><code>themes/</code> <code>wallpapers/</code></td><td>7 JSONs, 9 SVGs + generators</td></tr>
+<tr><td><code>tests/</code></td><td>static checks, package validation, QEMU runner</td></tr>
+<tr><td><code>website/</code></td><td>this static pixel site (HTML+CSS+vanilla JS)</td></tr></table>
+<h2>Stack</h2>
+<p><strong>archiso</strong> (profile → <code>mkarchiso</code> → ISO) · <strong>Calamares</strong> (partitions, users, bootloader, profile job) · <strong>Plasma + KWin + Wayland</strong> (desktop, native effects) · <strong>SDDM</strong> (login; autologin live-only) · <strong>pacman</strong> (sole backend).</p>
+<nav class="pager" id="docPager"></nav>
+</div>
+<aside class="doc-toc" id="docToc" aria-label="On this page"></aside>
+</div></main>
+<footer><div class="foot">
+<div><p class="big">ARCHRICING</p><p style="color:var(--mut)">“Your Arch. Your desktop.”</p></div>
+<div><h4>Site</h4><a href="./">Documentation</a><a href="../download.html">Download</a><a href="../changelog.html">Changelog</a><a href="../about.html">About</a></div>
+<div><h4>Project</h4><a href="https://github.com/K0rkkow/archricing">GitHub</a><a href="contributing.html">Contributing</a><a href="faq.html">FAQ</a></div>
+<div><h4>Docs</h4><a href="getting-started.html">Getting started</a><a href="building.html">Building</a><a href="security.html">Security</a></div>
+</div>
+<div class="legal">© 2026 ArchRicing contributors · GPL-3.0 · Wallpapers CC-BY-SA-4.0<br>ArchRicing is an independent project and is not affiliated with or endorsed by Arch Linux.</div></footer>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/themes.js"></script>
+<script src="../assets/js/search.js"></script>
+<script src="../assets/js/docs.js"></script>
+<script src="../assets/data/search-index.js"></script>
+</body>
+</html>

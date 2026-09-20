@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" data-site-theme="pixel-night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArchRicing — Float. Click. Make it yours.</title>
+<meta name="description" content="ArchRicing is a customizable Arch-based Linux desktop experience: KDE Plasma, Wayland, floating windows, dock, themes.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<style>
+.ticker{border-top:3px solid var(--line);border-bottom:3px solid var(--line);background:var(--panel);overflow:hidden;white-space:nowrap;font-family:var(--font-mono);font-size:.85rem;color:var(--mut);padding:.45rem 0}
+.ticker span{display:inline-block;padding-left:100%;animation:tick 28s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+.mock{background:#07070c;border:3px solid var(--ink);box-shadow:10px 10px 0 rgba(0,0,0,.5);position:relative;overflow:hidden;min-height:420px}
+.mock .wp{position:absolute;inset:0;background:linear-gradient(135deg,#1b1f4b,#4b3a8c 55%,#ff2e88)}
+.mock .wp::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(0,0,0,.25) 22px 24px)}
+.mock .bar{position:absolute;top:0;left:0;right:0;height:30px;background:#0a0a0e;border-bottom:3px solid var(--ink);display:flex;align-items:center;gap:.6rem;padding:0 .7rem;font-family:var(--font-mono);font-size:.72rem}
+.mock .mwin{position:absolute;background:var(--panel);border:3px solid var(--ink);box-shadow:6px 6px 0 rgba(0,0,0,.5);transition:box-shadow .12s steps(2),outline .12s}
+.mock .mwin.hot{outline:3px solid var(--accent);box-shadow:6px 6px 0 var(--accent)}
+.mock .mwin .t{border-bottom:3px solid var(--ink);background:var(--panel2);font-family:var(--font-mono);font-size:.7rem;padding:.2rem .5rem;display:flex;gap:.35rem;align-items:center}
+.mock .mwin .b{padding:.6rem .7rem;font-family:var(--font-mono);font-size:.75rem}
+.mock .dock{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;background:#0a0a0e;border:3px solid var(--ink);padding:.4rem .6rem}
+.mock .dock i{width:26px;height:26px;display:block;border:2px solid var(--line)}
+.mock-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.mock-tabs button[aria-pressed="true"]{background:var(--accent);color:#0a0a0e;border-color:var(--accent)}
+#mockNote{font-family:var(--font-mono);color:var(--mut);min-height:2.2em}
+#wobbleZone{position:relative;border:3px dashed var(--line);min-height:300px;overflow:hidden;background:var(--panel)}
+.wobble-win{position:absolute;background:var(--panel2);border:3px solid var(--cyan)}
+.swatch[aria-pressed="true"]{outline:3px solid var(--accent);outline-offset:2px}
+.wp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.wp-cell{border:3px solid var(--line);background:var(--panel);padding:.5rem;cursor:pointer;text-align:left;color:var(--ink);font-family:var(--font-mono)}
+.wp-cell:hover{border-color:var(--accent)}
+.wp-cell img{width:100%;display:block;image-rendering:auto;border:2px solid var(--line)}
+.wp-cell b{display:block;font-size:.8rem;margin-top:.4rem}
+.wp-cell small{color:var(--mut);font-size:.72rem}
+#wpView img{width:100%;display:block;border:3px solid var(--ink)}
+.timeline{border-left:3px solid var(--accent);margin-left:.6rem;padding-left:1.4rem}
+.timeline div{position:relative;padding:.35rem 0;font-family:var(--font-mono)}
+.timeline div::before{content:"";position:absolute;left:-1.95rem;top:.8rem;width:12px;height:12px;background:var(--accent);border:2px solid var(--ink)}
+.folders{display:flex;flex-wrap:wrap;gap:.5rem}
+.folders span{font-family:var(--font-mono);font-size:.75rem;border:2px solid var(--line);padding:.25rem .6rem;background:var(--panel)}
+.folders span:hover{border-color:var(--pink);color:var(--pink)}
+@media (max-width:760px){.wp-grid{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.ticker span{animation:none}.mock .mwin{transition:none}}
+</style>
+</head>
+<body data-depth="0">
+<canvas id="pxgrid" aria-hidden="true"></canvas>
+<header class="topbar"><div class="topbar-in">
+<a class="skip" href="#content">Skip to content</a>
+<a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="ArchRicing logo"><b>ARCH<i>RICING</i></b></a>
+<nav class="navlinks" id="navLinks" aria-label="Main">
+<a href="docs/">Docs</a><a href="#features">Features</a><a href="download.html">Download</a><a href="changelog.html">Changelog</a><a href="https://github.com/K0rkkow/archricing">GitHub</a>
+<button class="px-iconbtn" data-search-open="1">SEARCH [CTRL+K]</button>
+<button class="px-iconbtn" id="themeToggle">THEME</button>
+<a href="fr/" hreflang="fr">FR</a>
+<a class="px-btn hot" href="download.html">GET ARCHRICING</a>
+</nav>
+<button class="px-iconbtn hamburger" id="menuBtn" aria-label="Menu" aria-expanded="false">MENU</button>
+</div></header>
+<main id="content">
+<section class="hero">
+<span class="tag">[ SYSTEM BOOT — ARCHRICING v2026.09-dev ]</span>
+<h1>ARCH<span class="alt">RICING</span></h1>
+<p class="px-display" style="font-size:clamp(1.2rem,3vw,2rem)">FLOAT. CLICK. MAKE IT YOURS.</p>
+<p class="lede">ArchRicing is a <strong>customizable Arch-based Linux desktop experience</strong> — KDE Plasma on Wayland, floating windows, a translucent dock, and a ricing you drive with the mouse, not a cheat sheet.</p>
+<div class="hero-cta">
+<a class="px-btn hot" href="download.html">DOWNLOAD</a>
+<a class="px-btn" href="docs/">DOCUMENTATION</a>
+</div>
+<p class="hero-meta">x86_64 · KDE Plasma 6 · Wayland · Calamares · <span class="blink">▮</span></p>
+</section>
+<div class="ticker" aria-hidden="true"><span>FLOATING WINDOWS +++ NO FORCED TILING +++ MOUSE-FIRST +++ WOBBLY WINDOWS +++ TRANSPARENCY +++ BLUR +++ 7 THEMES +++ 9 WALLPAPERS +++ NORMAL / SECURITY +++ BUILD WITH ./build.sh +++&nbsp;</span></div>
+
+<section class="wrap" id="what">
+<p class="badge">01 // WHAT IS ARCHRICING?</p>
+<h2 class="sec-head reveal"><span class="n">01.</span> WHAT IS ARCHRICING?</h2>
+<p class="sec-sub reveal">An independent Linux distribution project based on Arch Linux. A preconfigured ISO: live desktop, graphical installer, full visual identity, graphical tools, optional security toolkit. <strong>ArchRicing is an independent project</strong> — not official Arch Linux.</p>
+<div class="grid three" style="display:grid;gap:1rem;grid-template-columns:repeat(4,minmax(0,1fr))">
+<div class="card reveal"><p class="px-display" style="font-size:2.2rem;margin:0"><span data-count="7">0</span></p><p>THEMES</p></div>
+<div class="card reveal"><p class="px-display" style="font-size:2.2rem;margin:0"><span data-count="9">0</span></p><p>WALLPAPERS</p></div>
+<div class="card reveal"><p class="px-display" style="font-size:2.2rem;margin:0"><span data-count="54">0</span></p><p>SECURITY TOOLS</p></div>
+<div class="card reveal"><p class="px-display" style="font-size:2.2rem;margin:0"><span data-count="1">0</span></p><p>BUILD COMMAND</p></div>
+</div>
+</section>
+
+<section class="wrap" id="desktop">
+<p class="badge">02 // DESKTOP</p>
+<h2 class="sec-head reveal"><span class="n">02.</span> THE DESKTOP, MOCKED LIVE</h2>
+<p class="sec-sub reveal">Original HTML/CSS mockup — a visual representation, not a screenshot. Poke the buttons.</p>
+<div class="mock-tabs" data-mock-tabs="mock" data-mock-note="mockNote" role="group" aria-label="Mockup views">
+<button class="px-iconbtn" data-view="desktop" aria-pressed="true">DESKTOP</button>
+<button class="px-iconbtn" data-view="dock">DOCK</button>
+<button class="px-iconbtn" data-view="panel">PANEL</button>
+<button class="px-iconbtn" data-view="windows">WINDOWS</button>
+<button class="px-iconbtn" data-view="themes">THEMES</button>
+</div>
+<div class="mock reveal" id="mock" data-view="desktop">
+<div class="wp" aria-hidden="true"></div>
+<div class="bar" data-part="panel"><span style="color:var(--green)">●</span><span>12:42</span><span style="margin-left:auto">WIFI ▂▄▆ · VOL · BAT · ESE</span></div>
+<div class="mwin" data-part="windows" style="left:8%;top:16%;width:38%"><div class="t"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> kitty</div><div class="b"><span style="color:var(--green)">$</span> fastfetch<br><span style="color:var(--mut)">OS: ArchRicing · DE: Plasma</span></div></div>
+<div class="mwin" data-part="windows" style="right:8%;top:30%;width:32%"><div class="t"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> notes</div><div class="b">Floating only.<br>Drag me anywhere.</div></div>
+<div class="mwin" data-part="panel" style="right:6%;top:12%;width:24%;border-color:var(--yellow)"><div class="t">! notification</div><div class="b">Updates ready. Click to apply.</div></div>
+<div class="dock" data-part="dock"><i style="background:var(--cyan)"></i><i style="background:var(--pink)"></i><i style="background:var(--violet)"></i><i style="background:var(--green)"></i><i style="background:var(--yellow)"></i><i style="background:var(--blue)"></i></div>
+</div>
+<p id="mockNote" aria-live="polite">Full ArchRicing look: wallpaper, top panel, floating windows, dock.</p>
+</section>
+
+<section class="wrap" id="features">
+<p class="badge">03 // FEATURES</p>
+<h2 class="sec-head reveal"><span class="n">03.</span> GEAR LIST</h2>
+<p class="sec-sub reveal">Nineteen real pieces. Hover them — they bite back (slightly).</p>
+<div class="zine reveal">
+<div><h3><span class="k">[01]</span> KDE PLASMA</h3><p>Full desktop environment, Wayland session, SDDM login.</p></div>
+<div><h3><span class="k">[02]</span> WAYLAND</h3><p>Default graphics session, GPU-accelerated effects.</p></div>
+<div><h3><span class="k">[03]</span> FLOATING WINDOWS</h3><p>No tiling, no splits. Minimize, maximize, close — with buttons.</p></div>
+<div><h3><span class="k">[04]</span> WOBBLY WINDOWS</h3><p>Native KWin jelly: OFF / SUBTLE / NORMAL / PLAYFUL.</p></div>
+<div><h3><span class="k">[05]</span> CUSTOM THEMES</h3><p>7 presets, one click restyles everything.</p></div>
+<div><h3><span class="k">[06]</span> WALLPAPERS</h3><p>9 original vectors, sharp to 4K.</p></div>
+<div><h3><span class="k">[07]</span> FLOATING DOCK</h3><p>Bottom-center, translucent, magnifying icons.</p></div>
+<div><h3><span class="k">[08]</span> TOP PANEL</h3><p>Slim bar: clock, net, sound, battery, session.</p></div>
+<div><h3><span class="k">[09]</span> TRANSPARENCY + BLUR</h3><p>Sliders for terminal, dock and panel.</p></div>
+<div><h3><span class="k">[10]</span> ANIMATIONS</h3><p>Smooth motion profiles + performance mode.</p></div>
+<div><h3><span class="k">[11]</span> FASTFETCH</h3><p>Custom theme, original ASCII logo, first-terminal greeting.</p></div>
+<div><h3><span class="k">[12]</span> ZSH + STARSHIP</h3><p>Classic shell, themed prompt, zero exotic bindings.</p></div>
+<div><h3><span class="k">[13]</span> KITTY</h3><p>Transparent by default. Konsole stays available.</p></div>
+<div><h3><span class="k">[14]</span> SETTINGS APP</h3><p>Graphical control center for the whole look.</p></div>
+<div><h3><span class="k">[15]</span> SOFTWARE CENTER</h3><p>pacman with buttons: search, install, remove.</p></div>
+<div><h3><span class="k">[16]</span> UPDATE CENTER</h3><p>See updates, click once. Never automatic.</p></div>
+<div><h3><span class="k">[17]</span> ARCHRICING CLI</h3><p><code>theme wallpaper settings update info diagnose reset</code></p></div>
+<div><h3><span class="k">[18]</span> CALAMARES</h3><p>Graphical installer, Normal/Security choice.</p></div>
+</div>
+</section>
+
+<section class="wrap" id="wobbly">
+<p class="badge">04 // PHYSICS</p>
+<h2 class="sec-head reveal"><span class="n">04.</span> SOFT MOTION ZONE</h2>
+<p class="sec-sub reveal">Move your cursor through the box. The windows lean. <strong>Site animation only</strong> — it does not simulate KWin. The real thing: elastic windows, no forced tiling. Your windows stay yours.</p>
+<div id="wobbleZone" class="reveal">
+<div class="wobble-win" style="left:10%;top:20%;width:220px"><div class="t term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> one</div><div style="padding:.7rem;font-family:var(--font-mono);font-size:.8rem">drag me (on Arch)</div></div>
+<div class="wobble-win" style="left:45%;top:45%;width:220px;border-color:var(--pink)"><div class="t term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> two</div><div style="padding:.7rem;font-family:var(--font-mono);font-size:.8rem">wobble: NORMAL</div></div>
+<div class="wobble-win" style="left:70%;top:15%;width:200px;border-color:var(--green)"><div class="t term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> three</div><div style="padding:.7rem;font-family:var(--font-mono);font-size:.8rem">floating 4ever</div></div>
+</div>
+</section>
+
+<section class="wrap" id="themes">
+<p class="badge">05 // THEMES</p>
+<h2 class="sec-head reveal"><span class="n">05.</span> RESKIN THIS SITE</h2>
+<p class="sec-sub reveal">Ten original ArchRicing site themes. The whole page recolors live, saved in your browser. (The OS ships 7 of these as system themes.)</p>
+<div data-theme-swatches style="display:flex;gap:.5rem;flex-wrap:wrap"></div>
+</section>
+
+<section class="wrap" id="wallpapers">
+<p class="badge">06 // WALLPAPERS</p>
+<h2 class="sec-head reveal"><span class="n">06.</span> REAL FILES, REAL PREVIEWS</h2>
+<p class="sec-sub reveal">Every file below exists in the repo at <code>wallpapers/</code> (mirrored here for the static site). Click to view.</p>
+<div class="wp-grid reveal" id="wpGrid">
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-sakura.svg" data-wp-name="archricing-sakura" data-wp-style="default · pastel dream" data-wp-file="archricing-sakura.svg"><img src="assets/wallpapers/archricing-sakura.svg" alt="archricing-sakura preview"><b>archricing-sakura</b><small>default · pastel dream</small></button>
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-aurora.svg" data-wp-name="archricing-aurora" data-wp-style="aurora theme" data-wp-file="archricing-aurora.svg"><img src="assets/wallpapers/archricing-aurora.svg" alt="archricing-aurora preview"><b>archricing-aurora</b><small>aurora theme</small></button>
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-ocean.svg" data-wp-name="archricing-ocean" data-wp-style="ocean theme" data-wp-file="archricing-ocean.svg"><img src="assets/wallpapers/archricing-ocean.svg" alt="archricing-ocean preview"><b>archricing-ocean</b><small>ocean theme</small></button>
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-midnight.svg" data-wp-name="archricing-midnight" data-wp-style="midnight theme" data-wp-file="archricing-midnight.svg"><img src="assets/wallpapers/archricing-midnight.svg" alt="archricing-midnight preview"><b>archricing-midnight</b><small>midnight theme</small></button>
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-night.svg" data-wp-name="archricing-night" data-wp-style="night variant" data-wp-file="archricing-night.svg"><img src="assets/wallpapers/archricing-night.svg" alt="archricing-night preview"><b>archricing-night</b><small>night variant</small></button>
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-dream.svg" data-wp-name="archricing-dream" data-wp-style="dream theme" data-wp-file="archricing-dream.svg"><img src="assets/wallpapers/archricing-dream.svg" alt="archricing-dream preview"><b>archricing-dream</b><small>dream theme</small></button>
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-cyber.svg" data-wp-name="archricing-cyber" data-wp-style="cyber theme" data-wp-file="archricing-cyber.svg"><img src="assets/wallpapers/archricing-cyber.svg" alt="archricing-cyber preview"><b>archricing-cyber</b><small>cyber theme</small></button>
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-pastel.svg" data-wp-name="archricing-pastel" data-wp-style="extra pastel" data-wp-file="archricing-pastel.svg"><img src="assets/wallpapers/archricing-pastel.svg" alt="archricing-pastel preview"><b>archricing-pastel</b><small>extra pastel</small></button>
+<button class="wp-cell" data-wp-src="assets/wallpapers/archricing-minimal.svg" data-wp-name="archricing-minimal" data-wp-style="minimal theme" data-wp-file="archricing-minimal.svg"><img src="assets/wallpapers/archricing-minimal.svg" alt="archricing-minimal preview"><b>archricing-minimal</b><small>minimal theme</small></button>
+</div>
+<figure id="wpView" class="reveal" style="margin-top:1rem"><img src="assets/wallpapers/archricing-sakura.svg" alt="archricing-sakura wallpaper preview"><figcaption class="px-display" style="font-size:.8rem;color:var(--mut)">archricing-sakura — pick one above</figcaption></figure>
+</section>
+
+<section class="wrap" id="editions">
+<p class="badge">07 // TWO EDITIONS</p>
+<h2 class="sec-head reveal"><span class="n">07.</span> NORMAL / SECURITY</h2>
+<div class="grid two" style="display:grid;gap:1rem;grid-template-columns:repeat(2,minmax(0,1fr))">
+<div class="card reveal"><h3>🌸 NORMAL</h3><p>KDE Plasma · Wayland · full ArchRicing desktop · apps · ricing · dock · panel · themes.</p></div>
+<div class="card reveal"><h3>🛡️ SECURITY</h3><p>Normal <strong>plus</strong> the toolkit. Same desktop, same look — and an organized menu:</p>
+<div class="folders"><span>Information Gathering</span><span>Network Analysis</span><span>Web Application Analysis</span><span>Vulnerability Analysis</span><span>Password Auditing</span><span>Exploitation</span><span>Reverse Engineering</span><span>Forensics</span><span>OSINT</span><span>Privacy</span><span>VPN &amp; Networking</span></div></div>
+</div>
+<div class="callout warn" style="border:3px solid var(--pink);padding:.85rem 1rem;margin-top:1rem"><b class="tag" style="font-family:var(--font-mono);font-size:.75rem;border:2px solid var(--pink);padding:0 .45rem">LEGAL</b> Authorized systems and labs only. No offensive guides on this site.</div>
+</section>
+
+<section class="wrap" id="install">
+<p class="badge">08 // INSTALL</p>
+<h2 class="sec-head reveal"><span class="n">08.</span> FROM ISO TO DESKTOP</h2>
+<div class="timeline reveal">
+<div>DOWNLOAD ISO <span style="color:var(--yellow)">(no public release yet)</span></div>
+<div>BOOT → ARCHRICING LIVE DESKTOP</div>
+<div>CLICK “INSTALL ARCHRICING” → CALAMARES</div>
+<div>USER / KEYBOARD / TIMEZONE / DISK (ext4 · Btrfs · LUKS · swap)</div>
+<div>EDITION: NORMAL or SECURITY + EXPERIENCE OPTIONS</div>
+<div>INSTALL → REBOOT → ARCHRICING DESKTOP</div>
+</div>
+</section>
+
+<section class="wrap" id="build">
+<p class="badge">09 // BUILD YOUR OWN ISO</p>
+<h2 class="sec-head reveal"><span class="n">09.</span> ONE COMMAND ENERGY</h2>
+<div class="term reveal" data-copy><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> build.sh</div><div class="term-body"><code>git clone https://github.com/K0rkkow/archricing.git
+cd archricing
+./build.sh</code></div></div>
+<p class="reveal">output:</p>
+<pre class="reveal"><code>out/
+└── archricing-....-x86_64.iso</code></pre>
+<p class="reveal" style="color:var(--mut)">(Exact dated name is set at build time.) Build from an Arch Linux / Arch-based environment compatible with archiso. Never Windows natively. <a href="docs/building.html">Full guide →</a></p>
+</section>
+
+<section class="wrap" id="terminal-demo">
+<p class="badge">10 // TERMINAL</p>
+<h2 class="sec-head reveal"><span class="n">10.</span> TRY THE PROMPT (VISUAL DEMO)</h2>
+<div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> kitty — visual demo, not a real shell</div><div class="term-body"><span class="p">$</span> <span id="termType" data-text="fastfetch">fastfetch</span><span class="blink">▮</span>
+<span class="c">ArchRicing</span>
+<span>-----------</span>
+<span>OS       ArchRicing</span>
+<span>Kernel   Linux</span>
+<span>Desktop  KDE Plasma</span>
+<span>Session  Wayland</span></div></div>
+</section>
+</main>
+<footer><div class="foot">
+<div><p class="big">ARCHRICING</p><p style="color:var(--mut)">“Your Arch. Your desktop.”</p></div>
+<div><h4>Site</h4><a href="docs/">Documentation</a><a href="download.html">Download</a><a href="changelog.html">Changelog</a><a href="about.html">About</a></div>
+<div><h4>Project</h4><a href="https://github.com/K0rkkow/archricing">GitHub</a><a href="docs/contributing.html">Contributing</a><a href="docs/faq.html">FAQ</a></div>
+<div><h4>Docs</h4><a href="docs/getting-started.html">Getting started</a><a href="docs/building.html">Building</a><a href="docs/security.html">Security</a></div>
+</div>
+<div class="legal">© 2026 ArchRicing contributors · GPL-3.0 · Wallpapers CC-BY-SA-4.0<br>ArchRicing is an independent project and is not affiliated with or endorsed by Arch Linux.</div></footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/themes.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/data/search-index.js"></script>
+</body>
+</html>

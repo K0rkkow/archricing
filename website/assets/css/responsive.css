@@ -1,0 +1,19 @@
+/* ============ responsive.css ============ */
+@media (max-width:1080px){
+  .doc-layout{grid-template-columns:230px minmax(0,1fr)}
+  .doc-toc{display:none}
+  .zine{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .doc-layout{grid-template-columns:minmax(0,1fr)}
+  .doc-side{display:none}
+  .doc-side.open{display:block;position:fixed;inset:70px 12px auto;z-index:250;max-height:66vh}
+  .navlinks{display:none}
+  .navlinks.open{display:flex;position:fixed;top:64px;right:12px;flex-direction:column;align-items:stretch;background:var(--panel);border:3px solid var(--accent);padding:1rem;z-index:250;gap:.6rem}
+  .hamburger{display:inline-block}
+  .zine{grid-template-columns:minmax(0,1fr)}
+  .zine>div:nth-child(odd){border-right:0}
+  .zine>div{border-bottom:3px solid var(--line)}
+  .foot{grid-template-columns:1fr 1fr}
+  .hero{min-height:auto;padding:2.2rem 1rem}
+}

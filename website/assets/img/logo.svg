@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" shape-rendering="crispEdges" role="img" aria-label="ArchRicing logo">
+  <rect x="1" y="1" width="46" height="46" fill="#0a0a0e"/>
+  <rect x="1" y="1" width="46" height="46" fill="none" stroke="#2a2a35" stroke-width="2"/>
+  <g>
+    <rect x="16" y="8" width="16" height="4" fill="#00e5ff"/>
+    <rect x="12" y="12" width="4" height="4" fill="#00e5ff"/><rect x="32" y="12" width="4" height="4" fill="#00e5ff"/>
+    <rect x="12" y="16" width="4" height="4" fill="#8b5cf6"/><rect x="32" y="16" width="4" height="4" fill="#8b5cf6"/>
+    <rect x="12" y="20" width="24" height="4" fill="#8b5cf6"/>
+    <rect x="12" y="24" width="4" height="4" fill="#ff2e88"/><rect x="32" y="24" width="4" height="4" fill="#ff2e88"/>
+    <rect x="12" y="28" width="4" height="4" fill="#ff2e88"/><rect x="32" y="28" width="4" height="4" fill="#ff2e88"/>
+    <rect x="12" y="32" width="4" height="4" fill="#ff2e88"/><rect x="32" y="32" width="4" height="4" fill="#ff2e88"/>
+  </g>
+  <rect x="36" y="36" width="4" height="4" fill="#3dff73"/>
+</svg>

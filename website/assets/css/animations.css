@@ -1,0 +1,15 @@
+/* ============ animations.css — light, stepped, motion-safe ============ */
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes wob{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
+@keyframes scan{from{background-position:0 0}to{background-position:0 44px}}
+.reveal{opacity:0}
+.reveal.in{animation:rise .5s steps(6) forwards}
+.floaty{animation:floaty 5s steps(12) infinite}
+.wobble{transition:transform .18s steps(3)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1}
+}

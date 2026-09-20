@@ -79,4 +79,11 @@ for k in EDITION THEME WALLPAPER DOCK TOP_PANEL TRANSPARENCY BLUR ANIMATIONS WOB
   grep -q "^$k=" "$ROOT/configs/install-profile.default.conf" || { echo "PROFIL: clé manquante $k"; fail=1; }
 done
 echo "profile keys OK"
+# Site statique : inventaire + absence de framework/CDN + index de recherche
+for f in website/index.html website/download.html website/changelog.html website/about.html website/favicon.svg website/README.md website/fr/index.html website/assets/css/main.css website/assets/css/docs.css website/assets/css/animations.css website/assets/css/responsive.css website/assets/js/main.js website/assets/js/themes.js website/assets/js/search.js website/assets/js/docs.js website/assets/img/logo.svg website/assets/data/search-index.js website/tools/build-index.py website/tools/check-links.py; do
+  [[ -f "$ROOT/$f" ]] || { echo "SITE MANQUANT: $f"; fail=1; }
+done
+[[ "$(ls "$ROOT"/website/docs/*.html | wc -l)" -eq 24 ]] || { echo "SITE: docs != 24 pages"; fail=1; }
+if grep -rilE 'react|next\.js|vue\.js|angular|svelte|astro|tailwind|bootstrap|unpkg|cdn\.jsdelivr|cdnjs|googleapis' "$ROOT/website" --include='*.html' --include='*.js' --include='*.css'; then echo "SITE: trace de framework/CDN"; fail=1; fi
+echo "website static OK"
 [[ $fail -eq 0 ]] && echo "ALL CHECKS PASSED" || { echo "ECHECS détectés"; exit 1; }

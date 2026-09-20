@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-site-theme="pixel-night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHANGELOG — ArchRicing</title>
+<meta name="description" content="ArchRicing changelog: only real milestones, no invented versions.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-depth="0">
+<canvas id="pxgrid" aria-hidden="true"></canvas>
+<header class="topbar"><div class="topbar-in">
+<a class="skip" href="#content">Skip to content</a>
+<a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="ArchRicing logo"><b>ARCH<i>RICING</i></b></a>
+<nav class="navlinks" id="navLinks" aria-label="Main">
+<a href="docs/">Docs</a><a href="index.html#features">Features</a><a href="download.html">Download</a><a href="changelog.html" aria-current="page">Changelog</a><a href="https://github.com/K0rkkow/archricing">GitHub</a>
+<button class="px-iconbtn" data-search-open="1">SEARCH [CTRL+K]</button>
+<button class="px-iconbtn" id="themeToggle">THEME</button>
+<a href="fr/" hreflang="fr">FR</a>
+<a class="px-btn hot" href="download.html">GET ARCHRICING</a>
+</nav>
+<button class="px-iconbtn hamburger" id="menuBtn" aria-label="Menu" aria-expanded="false">MENU</button>
+</div></header>
+<main id="content" class="wrap">
+<p class="badge">[ SYSTEM ] // HISTORY</p>
+<h1 class="sec-head">CHANGELOG</h1>
+<h2>Unreleased — 2026.09-dev</h2>
+<h3>Added</h3>
+<ul><li>Single entry point <code>./build.sh</code> (preflight, dep install prompt, verified output).</li>
+<li>archiso profile, live wiring, Calamares Normal/Security + Experience module (<code>install-profile.conf</code>).</li>
+<li><code>archricing</code> CLI (7 commands), 4 Tkinter apps, 7 themes, 9 wallpapers, 6 layout variants, 54-entry Security menu.</li>
+<li>This pixel website.</li></ul>
+<h3>Known issues</h3>
+<ul><li>No ISO built, booted or released.</li><li>Possible KWin blur flicker while wobbling (upstream #474196).</li><li>Calamares branding images not shipped.</li></ul>
+</main>
+<footer><div class="foot">
+<div><p class="big">ARCHRICING</p><p style="color:var(--mut)">“Your Arch. Your desktop.”</p></div>
+<div><h4>Site</h4><a href="docs/">Documentation</a><a href="download.html">Download</a><a href="changelog.html">Changelog</a><a href="about.html">About</a></div>
+<div><h4>Project</h4><a href="https://github.com/K0rkkow/archricing">GitHub</a><a href="docs/contributing.html">Contributing</a><a href="docs/faq.html">FAQ</a></div>
+<div><h4>Docs</h4><a href="docs/getting-started.html">Getting started</a><a href="docs/building.html">Building</a><a href="docs/security.html">Security</a></div>
+</div>
+<div class="legal">© 2026 ArchRicing contributors · GPL-3.0 · Wallpapers CC-BY-SA-4.0<br>ArchRicing is an independent project and is not affiliated with or endorsed by Arch Linux.</div></footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/themes.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/data/search-index.js"></script>
+</body>
+</html>

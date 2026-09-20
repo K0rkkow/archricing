@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-site-theme="pixel-night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — ArchRicing</title>
+<meta name="description" content="Frequently asked questions about ArchRicing.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/docs.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body data-depth="2" data-page="faq.html" data-prev="troubleshooting.html" data-prev-title="TROUBLESHOOTING" data-next="development.html" data-next-title="DEVELOPMENT">
+<canvas id="pxgrid" aria-hidden="true"></canvas>
+<header class="topbar"><div class="topbar-in">
+<a class="skip" href="#content">Skip to content</a>
+<a class="brand" href="../index.html"><img src="../assets/img/logo.svg" alt="ArchRicing logo"><b>ARCH<i>RICING</i></b></a>
+<nav class="navlinks" id="navLinks" aria-label="Main">
+<a href="./" aria-current="page">Docs</a><a href="../index.html#features">Features</a><a href="../download.html">Download</a><a href="../changelog.html">Changelog</a><a href="https://github.com/K0rkkow/archricing">GitHub</a>
+<button class="px-iconbtn" data-search-open="1">SEARCH</button>
+<button class="px-iconbtn" id="themeToggle">THEME</button>
+<a href="../fr/" hreflang="fr">FR</a>
+<a class="px-btn hot" href="../download.html">GET</a>
+</nav>
+<button class="px-iconbtn hamburger" id="menuBtn" aria-label="Menu" aria-expanded="false">MENU</button>
+</div></header>
+<main id="content"><div class="doc-layout">
+<button class="px-iconbtn" id="docSideToggle">CONTENTS</button>
+<aside class="doc-side" id="docSide" aria-label="Docs"></aside>
+<div class="doc">
+<h1>FAQ</h1>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">What is ArchRicing?</button><div class="faq-a"><p>An independent Arch-based distribution: preconfigured ISO, Plasma/Wayland desktop, graphical installer, full ricing.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Is it an official Arch Linux project?</button><div class="faq-a"><p>No. Independent, unaffiliated, unendorsed. Say it with us.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Which desktop? KDE? Wayland? Hyprland?</button><div class="faq-a"><p>KDE Plasma on Wayland. No Hyprland, no tiling managers — floating windows only.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Can I disable the dock / transparency / wobbly?</button><div class="faq-a"><p>Yes — installer options plus Settings/CLI afterwards. Performance mode kills all three at once.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Can I change themes / install software?</button><div class="faq-a"><p>Yes: 7 one-click themes; Software Center (pacman backend) + Discover.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">What is the Security edition?</button><div class="faq-a"><p>Normal + full toolkit + organized menu. Same desktop. Authorized systems only.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Can I build the ISO myself? Where does it land?</button><div class="faq-a"><p>On Arch: <code>git clone … &amp;&amp; cd archricing &amp;&amp; ./build.sh</code> → <code>out/*.iso</code> + <code>SHA256SUMS</code>.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Can I install it in a VM?</button><div class="faq-a"><p>Planned and provisioned for (guest agents, UEFI+BIOS); untested.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Does it replace Arch Linux?</button><div class="faq-a"><p>No — it <em>is</em> Arch underneath, preconfigured, with pacman native.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Where can I download it?</button><div class="faq-a"><p>Nowhere yet — no public ISO. Build from source or wait for Releases.</p></div></div>
+<nav class="pager" id="docPager"></nav>
+</div>
+<aside class="doc-toc" id="docToc" aria-label="On this page"></aside>
+</div></main>
+<footer><div class="foot">
+<div><p class="big">ARCHRICING</p><p style="color:var(--mut)">“Your Arch. Your desktop.”</p></div>
+<div><h4>Site</h4><a href="./">Documentation</a><a href="../download.html">Download</a><a href="../changelog.html">Changelog</a><a href="../about.html">About</a></div>
+<div><h4>Project</h4><a href="https://github.com/K0rkkow/archricing">GitHub</a><a href="contributing.html">Contributing</a><a href="faq.html">FAQ</a></div>
+<div><h4>Docs</h4><a href="getting-started.html">Getting started</a><a href="building.html">Building</a><a href="security.html">Security</a></div>
+</div>
+<div class="legal">© 2026 ArchRicing contributors · GPL-3.0 · Wallpapers CC-BY-SA-4.0<br>ArchRicing is an independent project and is not affiliated with or endorsed by Arch Linux.</div></footer>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/themes.js"></script>
+<script src="../assets/js/search.js"></script>
+<script src="../assets/js/docs.js"></script>
+<script src="../assets/data/search-index.js"></script>
+</body>
+</html>
