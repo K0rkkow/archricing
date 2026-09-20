@@ -1,13 +1,22 @@
 # Installation — ArchRicing
 
-## 1. Build (sur Arch Linux)
+## 1. Build (sur Arch Linux — 3 commandes)
 
 ```bash
-sudo pacman -S archiso edk2-ovmf qemu-desktop shellcheck
-git clone https://github.com/K0rkkow/archricing && cd archricing
-./scripts/build-iso.sh
+git clone https://github.com/K0rkkow/archricing.git
+cd archricing
+./build.sh
 # -> out/archricing-YYYY.MM.DD-x86_64.iso + out/SHA256SUMS
 ```
+
+`./build.sh` est le point d'entrée unique : il vérifie la compatibilité Arch,
+propose d'installer les dépendances manquantes (archiso, …) avec pacman
+(confirmation demandée), prépare l'environnement, lance le build et vérifie
+l'ISO produite. Les scripts de `scripts/` sont des détails internes.
+Options utiles : `./build.sh --help`, `./build.sh --check-only` (pré-vol sans
+build), `./build.sh --clean` (nettoyage).
+
+Prérequis optionnels pour les tests graphiques : `sudo pacman -S edk2-ovmf qemu-desktop`.
 
 ## 2. Test QEMU
 
@@ -26,6 +35,8 @@ sudo dd if=out/archricing-*.iso of=/dev/sdX bs=4M status=progress oflag=sync
 
 ## 4. Installateur Calamares
 
-Welcome to ArchRicing → Install ArchRicing. Profils : Desktop / Full / Security (opt-in).
+Welcome to ArchRicing → Install ArchRicing. Éditions : NORMAL / SECURITY
+(choix "Choose your ArchRicing edition"), puis page "ArchRicing Experience"
+(personnalisation graphique, enregistrée dans /etc/archricing/install-profile.conf).
 Partitionnement : auto, manuel, ext4, Btrfs, LUKS, swap. UEFI + BIOS supportés.
 Après reboot : même bureau que le live (post-install rejoue configs + skel).

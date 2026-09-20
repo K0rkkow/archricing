@@ -16,13 +16,12 @@ wsl -d Arch
 Dans WSL Arch :
 
 ```bash
-pacman -Syu --needed base-devel archiso git edk2-ovmf qemu-desktop shellcheck python
+pacman -Syu --needed base-devel git edk2-ovmf qemu-desktop shellcheck python
 git clone https://github.com/K0rkkow/archricing ~/archricing
 cd ~/archricing
-git update-index --chmod=+x scripts/*.sh scripts/archricing iso/*.sh iso/airootfs/root/customize_airootfs.sh tests/*.sh
 ./tests/check-tree.sh
 ./tests/validate-packages.sh
-sudo ./scripts/build-iso.sh
+./build.sh
 # -> out/archricing-*.iso + out/SHA256SUMS
 ```
 
@@ -35,11 +34,11 @@ pour le boot test, ou teste l'ISO depuis Windows avec Hyper-V/VirtualBox (UEFI a
 1. Installe VirtualBox/VMware/Hyper-V, crée une VM Arch (4 CPU, 8 Go RAM, 60 Go disque, UEFI activé).
 2. Installe Arch (iso officielle), puis dans la VM :
 ```bash
-sudo pacman -Syu --needed base-devel archiso git edk2-ovmf qemu-desktop shellcheck python
+sudo pacman -Syu --needed base-devel git edk2-ovmf qemu-desktop shellcheck python
 git clone https://github.com/K0rkkow/archricing ~/archricing
 cd ~/archricing
 ./tests/check-tree.sh && ./tests/validate-packages.sh
-sudo ./scripts/build-iso.sh
+./build.sh
 ./tests/test-qemu.sh uefi   # KVM disponible dans la VM si virtualisation imbriquée aktivée
 ```
 
@@ -49,4 +48,5 @@ sudo ./scripts/build-iso.sh
   il ne valide que la structure/syntaxe, jamais le boot ni pacman.
 - Ne jamais annoncer une ISO "testée" sans log `mkarchiso` + photo/menu de boot
   + `archricing diagnose` issus d'un vrai environnement Linux.
-- Premier build : `./scripts/build-iso.sh` (en root, sur Arch), rien d'autre.
+- Premier build : `./build.sh` (sur Arch, sudo demandé automatiquement), rien d'autre.
+  (`scripts/build-iso.sh` est un détail interne orchestré par `./build.sh`.)

@@ -5,7 +5,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 fail=0
-need=(README.md LICENSE CONTRIBUTING.md .gitattributes .gitignore
+need=(README.md LICENSE CONTRIBUTING.md .gitattributes .gitignore build.sh
  iso/profile/profiledef.sh iso/profile/packages.x86_64 iso/profile/pacman.conf iso/profile/bootstrap_packages.x86_64
  iso/build.sh iso/clean.sh
  iso/airootfs/root/customize_airootfs.sh iso/airootfs/usr/local/bin/archricing iso/airootfs/usr/local/bin/archricing-postinstall
@@ -28,7 +28,7 @@ need=(README.md LICENSE CONTRIBUTING.md .gitattributes .gitignore
  docs/BUILD_STATUS.md docs/editions.md docs/build-windows.md)
 for f in "${need[@]}"; do [[ -f "$ROOT/$f" ]] || { echo "MANQUANT: $f"; fail=1; }; done
 if [[ -f "$ROOT/calamares/modules/shellprocess-archricing-postinstall.conf" ]]; then echo "OBSOLETE: shellprocess-archricing-postinstall.conf (utiliser shellprocess@...)"; fail=1; fi
-bash -n "$ROOT"/scripts/*.sh "$ROOT"/scripts/archricing "$ROOT"/scripts/archricing-terminal-exec "$ROOT"/iso/*.sh "$ROOT"/tests/*.sh "$ROOT"/iso/airootfs/root/customize_airootfs.sh && echo "bash -n OK"
+bash -n "$ROOT"/build.sh "$ROOT"/scripts/*.sh "$ROOT"/scripts/archricing "$ROOT"/scripts/archricing-terminal-exec "$ROOT"/iso/*.sh "$ROOT"/tests/*.sh "$ROOT"/iso/airootfs/root/customize_airootfs.sh && echo "bash -n OK"
 python3 -m py_compile "$ROOT"/apps/*/*.py "$ROOT"/calamares/custom-modules/archricing_experience/main.py "$ROOT"/packages/security/menu/generate-menu.py "$ROOT"/configs/kde/generate-variants.py && echo "python OK"
 grep -q wobblywindowsEnabled "$ROOT/configs/kde/kwinrc" && echo "wobbly OK" || { echo "wobbly MANQUANT"; fail=1; }
 grep -qi tileEnabled=false "$ROOT/configs/kde/kwinrc" && echo "no-tiling OK" || { echo "no-tiling MANQUANT"; fail=1; }
@@ -61,6 +61,19 @@ assert len(glob.glob(root + "/configs/kde/variants/plasma-*.conf")) == 6
 print("menu OK (%d outils)" % n)
 EOF
 [[ $? -eq 0 ]] || fail=1
+# Point d'entrée unique ./build.sh
+grep -q 'scripts/build-iso.sh' "$ROOT/build.sh" && echo "build orchestration OK" || { echo "build.sh n'orchestre pas scripts/build-iso.sh"; fail=1; }
+for flag in --help --check-only --clean; do
+  grep -q -- "$flag" "$ROOT/build.sh" || { echo "build.sh: option $flag manquante"; fail=1; }
+done
+echo "build flags OK"
+if grep -qE '/home/[a-z]' "$ROOT/build.sh"; then echo "build.sh: chemin codé en dur détecté"; fail=1; fi
+echo "build paths OK"
+grep -q '^\./build\.sh$' "$ROOT/README.md" || grep -q '\./build\.sh' "$ROOT/README.md" || { echo "README: ./build.sh absent"; fail=1; }
+echo "README build OK"
+if [[ -d "$ROOT/.git" ]]; then
+  git -C "$ROOT" ls-files -s build.sh | grep -q '^100755' && echo "build executable OK" || { echo "build.sh: bit exécutable git manquant (git update-index --chmod=+x build.sh)"; fail=1; }
+fi
 # Profil : clés du .conf défaut == clés du module Calamares
 for k in EDITION THEME WALLPAPER DOCK TOP_PANEL TRANSPARENCY BLUR ANIMATIONS WOBBLY ROUNDED ICONS CURSOR TERMINAL FASTFETCH SHELL STARSHIP WELCOME SETTINGS_APP SOFTWARE_APP UPDATE_APP; do
   grep -q "^$k=" "$ROOT/configs/install-profile.default.conf" || { echo "PROFIL: clé manquante $k"; fail=1; }

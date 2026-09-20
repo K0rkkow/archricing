@@ -39,18 +39,27 @@ Quelqu'un démarre l'ISO → voit immédiatement le bureau ArchRicing → clique
 6. **FAST AND RESPONSIVE** — GPU, pas de daemons inutiles, Performance Mode.
 7. **DO NOT SACRIFICE USABILITY FOR AESTHETICS.**
 
-## Démarrage rapide (sur Arch Linux)
+## Build ISO (sur Arch Linux)
 
 ```bash
 git clone https://github.com/K0rkkow/archricing.git
 cd archricing
-./scripts/build-iso.sh        # build l'ISO -> out/archricing-YYYY.MM.DD-x86_64.iso
-./tests/test-qemu.sh uefi     # teste en QEMU (UEFI)
+./build.sh
 ```
 
-Voir [`docs/installation.md`](docs/installation.md),
-[`docs/customization.md`](docs/customization.md),
-[`docs/development.md`](docs/development.md).
+C'est tout : `./build.sh` vérifie le système, propose d'installer les dépendances
+manquantes, prépare l'environnement, lance archiso avec le profil ArchRicing et
+vérifie le résultat.
+
+L'ISO sera disponible dans `out/` :
+
+```bash
+out/archricing-YYYY.MM.DD-x86_64.iso
+out/SHA256SUMS
+```
+
+Détails : [`docs/installation.md`](docs/installation.md).
+Depuis Windows : [`docs/build-windows.md`](docs/build-windows.md).
 
 ## Arborescence
 

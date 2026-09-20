@@ -3,7 +3,8 @@
 > Environnement d'audit : **Windows** (pas de build ISO possible ici).
 > Tout ce qui exige mkarchiso/pacman/QEMU/Plasma est marqué **NOT VERIFIED**
 > et doit être validé sur Arch Linux (voir `docs/build-windows.md`).
-> Date d'audit : 2026-09-20. Commande recommandée : `./scripts/build-iso.sh`.
+> Date d'audit : 2026-09-20. Commande recommandée : `./build.sh` (racine,
+> point d'entrée unique ; `scripts/build-iso.sh` est un détail interne).
 > `tests/check-tree.sh` a été **réellement exécuté** via WSL bash le 2026-09-20 :
 > `ALL CHECKS PASSED` (bash -n, py_compile, wobbly, no-tiling, placement,
 > kitty, pacman.conf, bad-packages, editions sync, menu 54 outils, profile keys).
