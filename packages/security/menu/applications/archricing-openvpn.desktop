@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=OpenVPN
+GenericName=ArchRicing Security (openvpn)
+Comment=OpenVPN client
+Exec=archricing-terminal-exec openvpn
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Vpn-Networking;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=openvpn
+X-ArchRicing-Repo=extra

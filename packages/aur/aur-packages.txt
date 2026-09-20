@@ -1,0 +1,27 @@
+# Paquets AUR — installés UNIQUEMENT via helper (yay/paru), avec consentement utilisateur.
+# Chaque entrée : paquet | raison | alternative officielle si échec.
+yay-bin | helper AUR (bootstrap) | alternative: paru-bin
+bibata-cursor-theme-bin | curseur moderne | alternative: bibata-cursor-theme (extra)
+papirus-icon-theme-git | icônes à jour | alternative: papirus-icon-theme (extra)
+kvantum-theme-arc | thème Kvantum pastel | alternative: kvantum (extra) + breeze
+sddm-sugar-candy-git | SDDM thémé ArchRicing | alternative: sddm + breeze
+plasmoid-transparent-panel | panneau transparent | alternative: panneau natif + blur
+masscan | scan rapide | alternative: nmap / rustscan (extra)
+whatweb | fingerprint web | alternative: httpx manuel / nuclei
+dirsearch | fuzz dirs | alternative: gobuster/ffuf/feroxbuster (extra)
+wpscan | audit wordpress légal | alternative: nikto + nuclei
+metasploit | framework pentest légal | alternative: exploitdb + impacket
+netexec | audit réseau légal | alternative: smbclient + impacket
+responder | audit AD légal | alternative: impacket
+python-impacket | lib réseau/AD | alternative: smbclient
+seclists | wordlists | alternative: /usr/share/wordlists minimal (créé par script)
+sherlock | OSINT usernames | alternative: manuel
+recon-ng | OSINT framework | alternative: theharvester + amass
+photon | OSINT crawler | alternative: theharvester
+librewolf-bin | navigateur privacy | alternative: firefox
+mullvad-vpn-bin | VPN | alternative: wireguard-tools + openvpn
+riseup-vpn | VPN | alternative: openvpn
+rate-mirrors-bin | classement miroirs | alternative: reflector (extra)
+foot-transient | n/a — NE PAS INSTALLER (terminal = kitty) | -
+# NOTE: latte-dock n'est PLUS maintenu et casse Plasma 6 -> NE PAS l'utiliser.
+# Le dock ArchRicing = panneau Plasma natif flottant (voir configs/kde/).

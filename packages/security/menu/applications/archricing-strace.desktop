@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=strace
+GenericName=ArchRicing Security (strace)
+Comment=System call tracer
+Exec=archricing-terminal-exec strace
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=strace
+X-ArchRicing-Repo=extra

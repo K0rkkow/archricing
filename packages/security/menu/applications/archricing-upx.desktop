@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=UPX
+GenericName=ArchRicing Security (upx)
+Comment=Executable packer and unpacker
+Exec=archricing-terminal-exec upx
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=upx
+X-ArchRicing-Repo=extra

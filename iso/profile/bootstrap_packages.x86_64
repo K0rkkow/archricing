@@ -1,0 +1,11 @@
+# iso/profile/bootstrap_packages.x86_64 — paquets du bootstrap (base de l'airootfs).
+# Requis par mkarchiso aux côtés de packages.x86_64.
+base
+mkinitcpio
+archiso
+linux
+linux-firmware
+intel-ucode
+amd-ucode
+sudo
+efibootmgr

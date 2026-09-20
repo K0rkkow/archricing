@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=MTR
+GenericName=ArchRicing Security (mtr)
+Comment=Combined traceroute and ping diagnostic
+Exec=archricing-terminal-exec mtr
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Information-Gathering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=mtr
+X-ArchRicing-Repo=extra

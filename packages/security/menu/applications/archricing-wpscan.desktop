@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=WPScan
+GenericName=ArchRicing Security (wpscan)
+Comment=WordPress vulnerability scanner (legal use only)
+Exec=archricing-terminal-exec wpscan
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=wpscan
+X-ArchRicing-Repo=extra

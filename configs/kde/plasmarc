@@ -1,0 +1,12 @@
+# configs/kde/plasmarc — overview + bureaux virtuels souris-first.
+[Theme]
+name=ArchRicingSakura
+
+[Wallpapers]
+defaultWallpaperTheme=org.archricing.wallpaper.sakura
+
+[VirtualDesktops]
+Rows=1
+Number=2
+Names=Main,Play
+NavigationWrapping=true

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Responder
+GenericName=ArchRicing Security (responder)
+Comment=LLMNR/NBT-NS poisoner for audits (legal use only)
+Exec=archricing-terminal-exec responder
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Exploitation;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=responder
+X-ArchRicing-Repo=aur

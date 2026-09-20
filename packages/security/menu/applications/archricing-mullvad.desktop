@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Mullvad VPN
+GenericName=ArchRicing Security (mullvad-vpn)
+Comment=Mullvad VPN graphical client
+Exec=mullvad-vpn
+Icon=mullvad-vpn
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Vpn-Networking;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=mullvad-vpn
+X-ArchRicing-Repo=extra

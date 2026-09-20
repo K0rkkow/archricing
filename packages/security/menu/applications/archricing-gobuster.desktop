@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Gobuster
+GenericName=ArchRicing Security (gobuster)
+Comment=Directory, DNS and vhost buster
+Exec=archricing-terminal-exec gobuster
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=gobuster
+X-ArchRicing-Repo=extra

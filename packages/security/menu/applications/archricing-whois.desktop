@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Whois
+GenericName=ArchRicing Security (whois)
+Comment=Domain and IP ownership lookup
+Exec=archricing-terminal-exec whois
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Information-Gathering;X-ArchRicing-Osint;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=whois
+X-ArchRicing-Repo=extra

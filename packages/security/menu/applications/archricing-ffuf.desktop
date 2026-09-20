@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=ffuf
+GenericName=ArchRicing Security (ffuf)
+Comment=Fast web content fuzzer
+Exec=archricing-terminal-exec ffuf
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=ffuf
+X-ArchRicing-Repo=extra

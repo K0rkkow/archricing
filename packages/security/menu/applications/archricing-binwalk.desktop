@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Binwalk
+GenericName=ArchRicing Security (binwalk)
+Comment=Firmware and binary analysis tool
+Exec=archricing-terminal-exec binwalk
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;X-ArchRicing-Forensics;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=binwalk
+X-ArchRicing-Repo=extra

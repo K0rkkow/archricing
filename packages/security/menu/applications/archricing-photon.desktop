@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Photon
+GenericName=ArchRicing Security (photon)
+Comment=Fast OSINT web crawler
+Exec=archricing-terminal-exec photon
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Osint;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=photon
+X-ArchRicing-Repo=aur

@@ -1,0 +1,12 @@
+# archricing_experience — module Calamares personnalisé (page "ArchRicing Experience").
+# Type : viewmodule (PythonQt/QtWidgets) + job. Écrit les choix dans le
+# globalStorage Calamares ; le job les persiste dans /etc/archricing/install-profile.conf
+# de la cible, lu ensuite par archricing-postinstall. NOT VERIFIED (API PythonQt à
+# valider sur un vrai Calamares ; les clés/options restent la référence).
+type: "viewmodule"
+interface: "python"
+script: "main.py"
+name: "archricing_experience"
+prettyName: "ArchRicing Experience"
+requiredModules: ["users@users"]
+weight: 12

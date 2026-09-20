@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Tor Browser
+GenericName=ArchRicing Security (torbrowser-launcher)
+Comment=Tor Browser downloader and launcher
+Exec=torbrowser-launcher
+Icon=torbrowser
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Privacy;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=torbrowser-launcher
+X-ArchRicing-Repo=extra

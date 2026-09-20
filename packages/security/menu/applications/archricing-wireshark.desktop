@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Wireshark
+GenericName=ArchRicing Security (wireshark-qt)
+Comment=Graphical network protocol analyzer
+Exec=wireshark
+Icon=wireshark
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Network-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=wireshark-qt
+X-ArchRicing-Repo=extra

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=radare2
+GenericName=ArchRicing Security (radare2)
+Comment=Reverse engineering framework
+Exec=archricing-terminal-exec r2
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=radare2
+X-ArchRicing-Repo=extra

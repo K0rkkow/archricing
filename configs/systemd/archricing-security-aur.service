@@ -1,0 +1,19 @@
+# Template archricing-security-aur.service — instancié par post-install.sh
+# (remplace @USER@ par le login installé). One-shot au 1er boot : installe les
+# paquets AUR Security puis se désactive. Jamais d'outil exécuté, que du packaging.
+[Unit]
+Description=ArchRicing Security AUR packages (first boot only)
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=/etc/archricing/security-aur.pending
+
+[Service]
+Type=oneshot
+User=@USER@
+Environment=HOME=/home/@USER@
+ExecStart=/usr/local/bin/archricing-install-security-aur
+ExecStartPost=/usr/bin/rm -f /etc/archricing/security-aur.pending
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target

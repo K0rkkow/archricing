@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Install ArchRicing
+Comment=Install ArchRicing on your computer (graphical installer)
+Exec=calamares
+Icon=calamares
+Terminal=false
+Categories=System;

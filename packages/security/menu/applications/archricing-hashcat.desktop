@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=hashcat
+GenericName=ArchRicing Security (hashcat)
+Comment=Advanced password recovery (legal use only)
+Exec=archricing-terminal-exec hashcat
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Password-Auditing;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=hashcat
+X-ArchRicing-Repo=extra

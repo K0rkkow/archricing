@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=dnsenum
+GenericName=ArchRicing Security (dnsenum)
+Comment=DNS enumeration script
+Exec=archricing-terminal-exec dnsenum
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Information-Gathering;X-ArchRicing-Osint;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=dnsenum
+X-ArchRicing-Repo=extra

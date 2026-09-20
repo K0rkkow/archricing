@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=mitmproxy
+GenericName=ArchRicing Security (mitmproxy)
+Comment=Interactive TLS-capable intercepting proxy
+Exec=archricing-terminal-exec mitmproxy
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Network-Analysis;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=mitmproxy
+X-ArchRicing-Repo=extra

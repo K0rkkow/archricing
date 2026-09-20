@@ -1,0 +1,20 @@
+# configs/kde/kdeglobals — identité ArchRicing Sakura (défaut).
+[General]
+ColorScheme=ArchRicingSakura
+Name=ArchRicing
+shadeSortColumn=true
+
+[KDE]
+LookAndFeelPackage=org.archricing.desktop.sakura
+SingleClick=true
+ShowDeleteCommand=false
+
+[Icons]
+Theme=Papirus-Dark
+ColorScheme=ArchRicingSakura
+
+[WM]
+activeBackground=30,34,68
+activeForeground=245,240,255
+inactiveBackground=22,25,52
+inactiveForeground=160,165,200

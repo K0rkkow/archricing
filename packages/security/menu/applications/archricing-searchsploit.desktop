@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=searchsploit
+GenericName=ArchRicing Security (exploitdb)
+Comment=Offline Exploit-DB search
+Exec=archricing-terminal-exec searchsploit
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Exploitation;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=exploitdb
+X-ArchRicing-Repo=extra

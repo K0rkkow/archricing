@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# archricing-terminal-exec — lance une commande CLI dans le terminal choisi à l'install.
+# Lit TERMINAL dans /etc/archricing/install-profile.conf (kitty|konsole|system), défaut kitty.
+# Usage : archricing-terminal-exec <commande> [args...]
+set -euo pipefail
+PROFILE="/etc/archricing/install-profile.conf"
+TERM_CHOICE="kitty"
+[[ -f "$PROFILE" ]] && TERM_CHOICE="$(grep -E '^TERMINAL=' "$PROFILE" | cut -d= -f2 | tr -d ' \r' || echo kitty)"
+[[ -z "$TERM_CHOICE" ]] && TERM_CHOICE="kitty"
+[[ $# -ge 1 ]] || { echo "Usage: archricing-terminal-exec <commande> [args...]" >&2; exit 1; }
+case "$TERM_CHOICE" in
+  konsole) exec konsole -e "$@" ;;
+  system)  if command -v konsole >/dev/null; then exec konsole -e "$@"; else exec xterm -e "$@"; fi ;;
+  *)       if command -v kitty >/dev/null; then exec kitty "$@"; else exec konsole -e "$@" 2>/dev/null || exec xterm -e "$@"; fi ;;
+esac

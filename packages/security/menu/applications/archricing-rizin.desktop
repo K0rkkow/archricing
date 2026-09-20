@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Rizin
+GenericName=ArchRicing Security (rizin)
+Comment=Reverse engineering framework (r2 fork)
+Exec=archricing-terminal-exec rizin
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=rizin
+X-ArchRicing-Repo=extra

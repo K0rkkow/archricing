@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Nikto
+GenericName=ArchRicing Security (nikto)
+Comment=Web server vulnerability scanner (legal use only)
+Exec=archricing-terminal-exec nikto
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;X-ArchRicing-Vulnerability-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=nikto
+X-ArchRicing-Repo=extra

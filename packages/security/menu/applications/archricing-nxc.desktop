@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=NetExec
+GenericName=ArchRicing Security (netexec)
+Comment=Network execution pentest tool (legal use only)
+Exec=archricing-terminal-exec nxc
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Exploitation;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=netexec
+X-ArchRicing-Repo=aur

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Netcat
+GenericName=ArchRicing Security (openbsd-netcat)
+Comment=TCP/UDP swiss army knife
+Exec=archricing-terminal-exec nc
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Network-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=openbsd-netcat
+X-ArchRicing-Repo=extra

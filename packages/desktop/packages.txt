@@ -1,0 +1,50 @@
+# Paquets DESKTOP — KDE Plasma 6 Wayland + apps (repos officiels)
+# Meta minimal préféré à plasma-meta complet pour rester performant.
+plasma-desktop
+plasma-workspace
+plasma-workspace-wallpapers
+plasma-pa
+plasma-nm
+plasma-integration
+plasma-browser-integration
+kde-gtk-config
+breeze
+breeze-gtk
+breeze-grub
+kwin
+kwayland
+layer-shell-qt
+libkscreen
+kscreen
+kinfocenter
+kmenuedit
+kde-cli-tools
+kglobalacceld
+kdecoration
+aurorae
+oxygen
+oxygen-sounds
+ocean-sound-theme
+kdeplasma-addons
+kactivitymanagerd
+milou
+kcalc
+konsole
+yakuake
+krunner
+ksystemstats
+powerdevil
+flatpak-kcm
+discover
+packagekit-qt6
+fwupd
+kvantum
+qt6ct
+nwg-look
+networkmanager-qt
+libplasma
+qcoro
+kirigami-addons
+frameworkintegration
+# Dock moderne : Latte n'est plus maintenu -> on utilise le panneau Plasma flottant natif.
+# Option AUR documentée dans packages/aur/aur-packages.txt (plasmoids).

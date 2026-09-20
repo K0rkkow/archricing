@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=GDB
+GenericName=ArchRicing Security (gdb)
+Comment=GNU debugger
+Exec=archricing-terminal-exec gdb
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=gdb
+X-ArchRicing-Repo=extra

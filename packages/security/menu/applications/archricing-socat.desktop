@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Socat
+GenericName=ArchRicing Security (socat)
+Comment=Multipurpose relay and proxy tool
+Exec=archricing-terminal-exec socat
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Network-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=socat
+X-ArchRicing-Repo=extra

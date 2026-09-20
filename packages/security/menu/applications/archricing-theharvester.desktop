@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=theHarvester
+GenericName=ArchRicing Security (theharvester)
+Comment=Emails, subdomains and names harvester
+Exec=archricing-terminal-exec theharvester
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Osint;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=theharvester
+X-ArchRicing-Repo=extra

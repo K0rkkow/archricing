@@ -1,0 +1,1 @@
+{"name": "ocean", "label": "ArchRicing Ocean", "wallpaper": "archricing-ocean.svg", "mode": "dark", "accent": "#6ea8ff", "accent2": "#7dd7fc", "bg": "#0d1530", "fg": "#e8f1ff", "panel_opacity": 72, "dock_opacity": 66, "terminal_opacity": 0.74, "blur": 26, "wobbly": "subtle", "animations": "smooth", "icons": "Papirus-Dark", "cursor": "Bibata-Modern-Ice", "font": "Noto Sans 10"}

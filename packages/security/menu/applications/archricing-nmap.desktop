@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Nmap
+GenericName=ArchRicing Security (nmap)
+Comment=Network discovery and port scanner (legal use only)
+Exec=archricing-terminal-exec nmap
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Information-Gathering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=nmap
+X-ArchRicing-Repo=extra

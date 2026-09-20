@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=YARA
+GenericName=ArchRicing Security (yara)
+Comment=Malware pattern matcher
+Exec=archricing-terminal-exec yara
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;X-ArchRicing-Forensics;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=yara
+X-ArchRicing-Repo=extra

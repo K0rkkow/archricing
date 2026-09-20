@@ -1,0 +1,8 @@
+# Build artifacts (jamais committés)
+out/
+work/
+# Backups créés par les scripts (reset, build)
+/**/*.bak-*
+iso/profile/packages.x86_64.bak-*
+# VM test
+*.qcow2

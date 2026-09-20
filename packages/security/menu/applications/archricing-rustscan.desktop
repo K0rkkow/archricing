@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=RustScan
+GenericName=ArchRicing Security (rustscan)
+Comment=Fast port scanner, pipes results to Nmap
+Exec=archricing-terminal-exec rustscan
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Information-Gathering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=rustscan
+X-ArchRicing-Repo=extra

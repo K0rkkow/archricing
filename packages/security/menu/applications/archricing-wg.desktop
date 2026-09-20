@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=WireGuard
+GenericName=ArchRicing Security (wireguard-tools)
+Comment=WireGuard configuration tool
+Exec=archricing-terminal-exec wg
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Vpn-Networking;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=wireguard-tools
+X-ArchRicing-Repo=core

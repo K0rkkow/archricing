@@ -1,0 +1,12 @@
+# ARCHRICING SECURITY — index. Légal : usage uniquement sur systèmes autorisés.
+#
+# Deux listes (vérifiées 2026-09-20, re-vérifiées à chaque build) :
+#   security-official.txt  — repos Arch (extra/core), installés par Calamares
+#                            quand l'édition SECURITY est choisie.
+#   security-aur.txt       — AUR, installés au 1er boot via
+#                            archricing-security-aur.service (scripts/install-security-aur.sh).
+#                            Tout paquet introuvable est ignoré + journalisé, jamais fatal.
+#
+# L'ancienne liste monolithique a été découpée ; ce fichier est l'index.
+# Le bureau Security = bureau Normal + ces outils + catégorie "Security" dans KDE.
+# Aucun thème "Kali", aucun branding copié. Aucune exécution automatique d'outil.

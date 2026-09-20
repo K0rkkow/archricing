@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=sqlmap
+GenericName=ArchRicing Security (sqlmap)
+Comment=SQL injection takeover tool (legal use only)
+Exec=archricing-terminal-exec sqlmap
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=sqlmap
+X-ArchRicing-Repo=extra

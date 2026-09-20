@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=DiG
+GenericName=ArchRicing Security (bind)
+Comment=DNS lookup utility
+Exec=archricing-terminal-exec dig
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Information-Gathering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=bind
+X-ArchRicing-Repo=extra

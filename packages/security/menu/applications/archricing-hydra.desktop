@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Hydra
+GenericName=ArchRicing Security (hydra)
+Comment=Fast network logon cracker (legal use only)
+Exec=archricing-terminal-exec hydra
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Password-Auditing;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=hydra
+X-ArchRicing-Repo=extra

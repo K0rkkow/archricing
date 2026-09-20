@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=dirsearch
+GenericName=ArchRicing Security (dirsearch)
+Comment=Web path scanner and fuzzer
+Exec=archricing-terminal-exec dirsearch
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=dirsearch
+X-ArchRicing-Repo=aur

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=TShark
+GenericName=ArchRicing Security (wireshark-qt)
+Comment=Terminal-based network analyzer
+Exec=archricing-terminal-exec tshark
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Network-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=wireshark-qt
+X-ArchRicing-Repo=extra

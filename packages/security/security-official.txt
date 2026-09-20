@@ -1,0 +1,48 @@
+# ARCHRICING SECURITY — paquets OFFICIELS (core/extra/multilib), installés par Calamares.
+# Vérifié 2026-09-20 : masscan + wpscan + mullvad-vpn sont en [extra] (plus en AUR).
+# "dig" = paquet bind. "strings" = paquet binutils. "tshark" = paquet wireshark-qt.
+# rockyou/dirbuster = voir security-aur.txt (pas de paquet officiel).
+nmap
+masscan
+rustscan
+openbsd-netcat
+socat
+whois
+bind
+traceroute
+mtr
+arp-scan
+tcpdump
+wireshark-qt
+mitmproxy
+amass
+subfinder
+theharvester
+dnsenum
+ffuf
+gobuster
+feroxbuster
+nikto
+nuclei
+sqlmap
+wpscan
+hydra
+john
+hashcat
+exploitdb
+smbclient
+ghidra
+radare2
+rizin
+binwalk
+binutils
+file
+ltrace
+strace
+gdb
+yara
+upx
+torbrowser-launcher
+wireguard-tools
+openvpn
+mullvad-vpn

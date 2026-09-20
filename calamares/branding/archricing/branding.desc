@@ -1,0 +1,34 @@
+--- # calamares branding
+componentName: archricing
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+productName: ArchRicing
+productVersion: "2026.09"
+versionedName: "ArchRicing 2026.09 — Arch, but make it beautiful."
+shortProductName: ArchRicing
+bootloaderEntryName: ArchRicing
+productUrl: https://github.com/votre-org/archricing
+supportUrl: https://github.com/votre-org/archricing/blob/main/docs/troubleshooting.md
+releaseNotesUrl: https://github.com/votre-org/archricing/releases
+windowWidth: 980
+windowHeight: 620
+windowExpanding: normal
+windowSize: 980,620
+sidebarBackground: "#14162b"
+sidebarText: "#f2ecff"
+sidebarTextSelect: "#ff7ac6"
+sidebarTextHighlight: "#7dd7fc"
+images:
+  productLogo: "logo.png"
+  productIcon: "logo.png"
+  productWelcome: "welcome.png"
+slideshow: "show.qml"
+style:
+  sidebarBackground: "#14162b"
+  sidebarText: "#f2ecff"
+strings:
+  welcomeHeader: "Welcome to ArchRicing"
+  welcomeText: "A beautiful Arch Linux experience. Floating desktop, mouse-first, no tiling, no mandatory shortcuts."
+  warningText: "This installer will modify your disk. Automatic partitioning, manual partitioning, ext4/Btrfs, LUKS and swap are supported."
+  readyText: "Ready to install ArchRicing?"
+  browseText: "Your live session is the real system — what you see is what gets installed."

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=file
+GenericName=ArchRicing Security (file)
+Comment=Identify file types
+Exec=archricing-terminal-exec file
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;X-ArchRicing-Forensics;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=file
+X-ArchRicing-Repo=core

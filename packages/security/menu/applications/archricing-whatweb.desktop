@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=WhatWeb
+GenericName=ArchRicing Security (whatweb)
+Comment=Web technology fingerprinter
+Exec=archricing-terminal-exec whatweb
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=whatweb
+X-ArchRicing-Repo=aur

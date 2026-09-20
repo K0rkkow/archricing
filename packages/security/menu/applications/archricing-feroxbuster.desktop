@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Feroxbuster
+GenericName=ArchRicing Security (feroxbuster)
+Comment=Fast content discovery tool
+Exec=archricing-terminal-exec feroxbuster
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=feroxbuster
+X-ArchRicing-Repo=extra

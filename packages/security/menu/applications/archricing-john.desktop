@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=John the Ripper
+GenericName=ArchRicing Security (john)
+Comment=Password hash cracker (legal use only)
+Exec=archricing-terminal-exec john
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Password-Auditing;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=john
+X-ArchRicing-Repo=extra

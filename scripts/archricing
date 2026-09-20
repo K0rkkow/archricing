@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# archricing CLI — theme/wallpaper/settings/update/info/diagnose/reset. Sûr, documenté.
+set -euo pipefail
+THEMES_DIR="/usr/share/archricing/themes"
+WALL_DIR="/usr/share/backgrounds/archricing"
+usage(){ cat <<'EOF'
+Usage: archricing <commande>
+  theme [nom]       liste ou applique un thème (sakura/aurora/ocean/midnight/dream/cyber/minimal)
+  wallpaper [fichier]  liste ou applique un wallpaper
+  settings          ouvre ArchRicing Settings (GUI)
+  update            met à jour le système (demande confirmation, jamais auto)
+  info              affiche version + session + GPU
+  diagnose          rapport GPU/Wayland/KDE/audio/réseau/disque/mémoire
+  reset             restaure la config ArchRicing (avec backup)
+EOF
+}
+cmd="${1:-}"; arg="${2:-}"
+case "$cmd" in
+  theme)
+    if [[ -z "$arg" ]]; then ls "$THEMES_DIR" 2>/dev/null || ls "$(dirname "$0")/../themes"/*/theme.json; exit 0; fi
+    SRC="$THEMES_DIR/$arg.json"; [[ -f "$SRC" ]] || SRC="$(cd "$(dirname "$0")/.." && pwd)/themes/$arg/theme.json"
+    [[ -f "$SRC" ]] || { echo "Thème inconnu: $arg" >&2; exit 1; }
+    WALL="$(python3 -c "import json;print(json.load(open('$SRC'))['wallpaper'])" 2>/dev/null || echo sakura.svg)"
+    plasma-apply-wallpaperimage "$WALL_DIR/$WALL" 2>/dev/null || qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "var d=desktops()[0];d.wallpaperPlugin='org.kde.image';d.currentConfigGroup=['Wallpaper','org.kde.image','General'];d.writeConfig('Image','file://$WALL_DIR/$WALL')" 2>/dev/null || echo "Wallpaper: $WALL"
+    echo "Thème appliqué: $arg";;
+  wallpaper)
+    if [[ -z "$arg" ]]; then ls "$WALL_DIR" 2>/dev/null || echo "aucun wallpaper système"; exit 0; fi
+    plasma-apply-wallpaperimage "$WALL_DIR/$arg" 2>/dev/null || plasma-apply-wallpaperimage "$arg" || echo "Wallpaper: $arg";;
+  settings) archricing-settings 2>/dev/null || python3 /usr/share/archricing/settings/app.py 2>/dev/null || echo "Lancez apps/settings/app.py";;
+  update) sudo pacman -Syu;;
+  info) echo "ArchRicing $(cat /usr/share/archricing/VERSION 2>/dev/null || echo dev) | ${XDG_SESSION_TYPE:-unknown} | $(uname -r) | $(plasmashell --version 2>/dev/null || echo 'plasma n/a')";;
+  diagnose) bash "$(dirname "$0")/diagnostics.sh";;
+  reset) bash "$(dirname "$0")/reset.sh";;
+  *) usage;;
+esac

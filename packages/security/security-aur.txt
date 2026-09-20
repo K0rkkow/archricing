@@ -1,0 +1,25 @@
+# ARCHRICING SECURITY — paquets AUR (installés APRÈS Calamares, au 1er boot,
+# via archricing-security-aur.service, avec réseau ; jamais pendant le live).
+# Vérifié 2026-09-20 via aur.archlinux.org : netexec, whatweb, dirsearch,
+# librewolf-bin, mullvad-vpn-bin, metasploit-git existent. Le reste est marqué
+# par confiance (verify-at-build : scripts/install-security-aur.sh ignore
+# proprement tout paquet introuvable et le journalise).
+# Format : paquet | binaire(s) | confiance | fallback si absent
+whatweb | whatweb | HIGH (AUR confirmé) | nuclei + nikto
+dirsearch | dirsearch | HIGH (AUR confirmé) | gobuster / ffuf / feroxbuster
+httpx | httpx | MEDIUM (non confirmé, probable AUR) | httprobe / curl
+wpscan-ignored | - | - | wpscan est en [extra], voir security-official.txt
+metasploit | msfconsole | HIGH (AUR: metasploit / metasploit-git) | exploitdb
+netexec | nxc,netexec | HIGH (AUR confirmé) | smbclient + impacket
+python-impacket | impacket-* | MEDIUM (nom AUR probable) | smbclient
+responder | responder | MEDIUM (probable AUR) | impacket-ntlmrelayx
+seclists | - (données) | HIGH (AUR connu) | wordlists minimales intégrées
+rockyou | - (données) | LOW (nom AUR incertain) | seclists
+dirbuster | dirbuster | LOW (projet ancien, AUR incertain) | seclists + gobuster
+sherlock | sherlock | MEDIUM (nom AUR probable) | manuel
+recon-ng | recon-ng | MEDIUM (probable AUR) | theharvester + amass
+photon | photon | MEDIUM (probable AUR) | theharvester
+librewolf-bin | librewolf | HIGH (AUR confirmé) | firefox
+mullvad-vpn-bin | mullvad-vpn | HIGH (mais mullvad-vpn est en [extra]) | mullvad-vpn officiel
+riseup-vpn | riseup-vpn | MEDIUM (zst Arch existe, probable AUR) | openvpn / wireguard
+yay-bin | yay | HIGH (helper bootstrap) | paru-bin

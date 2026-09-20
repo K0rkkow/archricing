@@ -1,0 +1,45 @@
+# Starship — thème ArchRicing (pastel cyber, 2 lignes, discret).
+format = "$os$username$hostname$directory$git_branch$git_status$nix_shell$python$nodejs$rust$golang$time$line_break$character"
+add_newline = true
+command_timeout = 500
+
+[os]
+disabled = false
+style = "bold #ff7ac6"
+symbols = { Arch = "󰣇 ", Linux = "🐧 " }
+
+[username]
+show_always = true
+style_user = "bold #7dd7fc"
+style_root = "bold #ff5f8f"
+format = "[$user]($style) "
+
+[hostname]
+ssh_only = false
+style = "#c792ea"
+format = "on [$hostname]($style) "
+
+[directory]
+style = "bold #6ea8ff"
+read_only = " 🔒"
+format = "in [$path]($style)[$read_only]($style) "
+
+[git_branch]
+style = "bold #5ff2b8"
+format = "on [$branch]($style) "
+
+[git_status]
+conflicted = "⚔ "
+modified = "● "
+staged = "✓ "
+
+[character]
+success_symbol = "[❯](bold #ff7ac6)"
+error_symbol = "[❯](bold #ff5f8f)"
+vicmd_symbol = "[❮](bold #ffd479)"
+
+[time]
+disabled = false
+style = "#8b90b8"
+format = "at [$time]($style) "
+time_format = "%H:%M"

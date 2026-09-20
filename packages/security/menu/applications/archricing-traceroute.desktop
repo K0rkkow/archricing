@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Traceroute
+GenericName=ArchRicing Security (traceroute)
+Comment=Trace network path to a host
+Exec=archricing-terminal-exec traceroute
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Information-Gathering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=traceroute
+X-ArchRicing-Repo=extra

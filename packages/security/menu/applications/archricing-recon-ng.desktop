@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=recon-ng
+GenericName=ArchRicing Security (recon-ng)
+Comment=Modular OSINT framework
+Exec=archricing-terminal-exec recon-ng
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Osint;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=recon-ng
+X-ArchRicing-Repo=aur

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=arp-scan
+GenericName=ArchRicing Security (arp-scan)
+Comment=ARP scanner for local network discovery
+Exec=archricing-terminal-exec arp-scan
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Information-Gathering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=arp-scan
+X-ArchRicing-Repo=extra

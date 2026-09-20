@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Amass
+GenericName=ArchRicing Security (amass)
+Comment=Attack surface mapping and subdomain enum
+Exec=archricing-terminal-exec amass
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Osint;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=amass
+X-ArchRicing-Repo=extra

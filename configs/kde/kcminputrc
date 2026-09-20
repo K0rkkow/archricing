@@ -1,0 +1,8 @@
+# configs/kde/kcminputrc — souris d'abord, touchpad naturel mais simple.
+[Mouse]
+cursorTheme=Bibata-Modern-Ice
+cursorSize=24
+ShakeCursor=false
+
+[Keyboard]
+NumLock=0

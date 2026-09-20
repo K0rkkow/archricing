@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=ltrace
+GenericName=ArchRicing Security (ltrace)
+Comment=Library call tracer
+Exec=archricing-terminal-exec ltrace
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=ltrace
+X-ArchRicing-Repo=extra

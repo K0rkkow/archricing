@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=subfinder
+GenericName=ArchRicing Security (subfinder)
+Comment=Fast subdomain discovery
+Exec=archricing-terminal-exec subfinder
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Osint;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=subfinder
+X-ArchRicing-Repo=extra

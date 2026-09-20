@@ -1,0 +1,50 @@
+# configs/kde/kwinrc — ArchRicing : FLOATING ONLY, mouse-first, wobbly natif KWin.
+# AUCUN tiling activé. AUCUN raccourci WM imposé (on ne touche pas à khotkeys).
+[Compositing]
+OpenGLIsUnsafe=false
+Backend=OpenGL
+AnimationsDuration=220
+AnimationSpeed=3
+HiddenPreviews=5
+
+[Plugins]
+blurEnabled=true
+contrastEnabled=true
+wobblywindowsEnabled=true
+magnifierEnabled=false
+tileEnabled=false
+crosstabsEnabled=false
+quicktileEnabled=false
+# NOTE bug upstream #474196 : le blur peut scintiller pendant le wobble sur Wayland.
+# Fix partiel intégré depuis KWin 6.4 ; si persistant, réduire Wobbly -> SUBTLE.
+
+[Effect-Blur]
+BlurStrength=12
+NoiseStrength=4
+
+[Effect-WobblyWindows]
+WobblynessLevel=1
+# 0=OFF 1=NORMAL(defaut) — réglé par ArchRicing Settings (OFF/SUBTLE/NORMAL/PLAYFUL)
+# SUBTLE -> WobblynessLevel=0 (via stiffness), PLAYFUL -> 2. Voir apps/settings.
+Stiffness=45
+Drag=85
+Velocity=35
+MoveFactor=25
+ResizeFactor=15
+
+[Windows]
+FocusPolicy=ClickToFocus
+TitlebarDoubleClickOp=Maximize
+BorderSnapZone=10
+WindowSnapZone=10
+CenterSnapZone=0
+SnapOnlyWhenOverlapping=false
+RollOverDesktops=false
+Placement=Centered
+# Pas de placement tiling : les fenêtres restent où l'utilisateur les pose.
+
+[Effect-DesktopGrid]
+Border=10
+
+[Effect-PresentWindows]
+LayoutMode=2

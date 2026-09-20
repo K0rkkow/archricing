@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=httpx
+GenericName=ArchRicing Security (httpx)
+Comment=Fast HTTP prober and fingerprinting tool
+Exec=archricing-terminal-exec httpx
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=httpx
+X-ArchRicing-Repo=aur

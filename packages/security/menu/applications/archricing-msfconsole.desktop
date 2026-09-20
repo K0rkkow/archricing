@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Metasploit
+GenericName=ArchRicing Security (metasploit)
+Comment=Exploit development framework (legal use only)
+Exec=archricing-terminal-exec msfconsole
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Exploitation;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=metasploit
+X-ArchRicing-Repo=aur

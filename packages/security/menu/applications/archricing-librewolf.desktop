@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=LibreWolf
+GenericName=ArchRicing Security (librewolf-bin)
+Comment=Privacy-focused web browser
+Exec=librewolf
+Icon=librewolf
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Privacy;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=librewolf-bin
+X-ArchRicing-Repo=aur

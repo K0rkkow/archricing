@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=strings
+GenericName=ArchRicing Security (binutils)
+Comment=Extract printable strings from binaries
+Exec=archricing-terminal-exec strings
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;X-ArchRicing-Forensics;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=binutils
+X-ArchRicing-Repo=core

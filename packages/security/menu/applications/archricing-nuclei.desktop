@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Nuclei
+GenericName=ArchRicing Security (nuclei)
+Comment=Template-based vulnerability scanner (legal use only)
+Exec=archricing-terminal-exec nuclei
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Web-Analysis;X-ArchRicing-Vulnerability-Analysis;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=nuclei
+X-ArchRicing-Repo=extra

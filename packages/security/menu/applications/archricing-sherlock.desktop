@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Sherlock
+GenericName=ArchRicing Security (sherlock)
+Comment=Username search across social networks
+Exec=archricing-terminal-exec sherlock
+Icon=utilities-terminal
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Osint;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=sherlock
+X-ArchRicing-Repo=aur

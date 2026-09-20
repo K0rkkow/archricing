@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Ghidra
+GenericName=ArchRicing Security (ghidra)
+Comment=Software reverse engineering suite
+Exec=ghidra
+Icon=ghidra
+Terminal=false
+Categories=X-ArchRicing-Security;X-ArchRicing-Reverse-Engineering;
+Keywords=security;archricing;
+NoDisplay=false
+X-ArchRicing-Package=ghidra
+X-ArchRicing-Repo=extra

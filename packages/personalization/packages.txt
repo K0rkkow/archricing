@@ -1,0 +1,15 @@
+# Paquets PERSONNALISATION (officiels)
+kvantum
+kvantum-qt5
+qt5ct
+qt6ct
+nwg-look
+papirus-icon-theme
+breeze-icons
+oxygen-icons
+bibata-cursor-theme
+inter-font
+noto-fonts
+plasma5support
+# NOTE: pas de paquet générique "wallpapers" — nos fonds sont dans wallpapers/ (SVG).
+# Le reste (Kvantum themes, SDDM sugar-candy, plasmoids) est en AUR -> voir ../aur/
