@@ -4,8 +4,20 @@
 ![Base](https://img.shields.io/badge/base-Arch%20Linux-1793d1?style=flat-square)
 ![Desktop](https://img.shields.io/badge/desktop-KDE%20Plasma%206%20Wayland-1e1e2e?style=flat-square)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green?style=flat-square)
+![CI](https://github.com/K0rkkow/archricing/actions/workflows/ci.yml/badge.svg)
 
 > **Floating desktop. Mouse-first. No tiling. No mandatory shortcuts. Beautiful by default.**
+
+## État du projet (honnête)
+
+- ✅ Contrôles statiques : structure, syntaxe bash/Python, JSON, cohérence
+  éditions/menu/profil — vérifiés en CI à chaque push (voir badge ci-dessus).
+- ⬜ **Aucune ISO publiée pour l'instant** (section Releases vide) : le build
+  `mkarchiso` exige une vraie machine Arch Linux et n'a pas encore été exécuté.
+- ⬜ Boot UEFI/BIOS, live Plasma, Calamares, installs Normal/Security : **NOT VERIFIED**.
+- Détail point par point : [`docs/BUILD_STATUS.md`](docs/BUILD_STATUS.md).
+- Construire l'ISO (sur Arch) : [`docs/installation.md`](docs/installation.md).
+  Depuis Windows : [`docs/build-windows.md`](docs/build-windows.md).
 
 ArchRicing est une véritable distribution basée sur Arch Linux : une ISO préconfigurée
 avec KDE Plasma 6 (Wayland), installateur graphique Calamares, dock translucide,
