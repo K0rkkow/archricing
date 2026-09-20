@@ -9,12 +9,16 @@ cd archricing
 # -> out/archricing-YYYY.MM.DD-x86_64.iso + out/SHA256SUMS
 ```
 
-`./build.sh` est le point d'entrée unique : il vérifie la compatibilité Arch,
+`./build.sh` est le point d'entrée unique : il vérifie la compatibilité,
 propose d'installer les dépendances manquantes (archiso, …) avec pacman
 (confirmation demandée), prépare l'environnement, lance le build et vérifie
-l'ISO produite. Les scripts de `scripts/` sont des détails internes.
+l'ISO produite. Sur Arch il build en natif ; sur Fedora/Debian/Ubuntu (et
+autres), il build automatiquement dans un conteneur `archlinux:latest`
+(podman ou docker) — l'ISO est toujours produite par archiso/mkarchiso.
+Les scripts de `scripts/` et `iso/` sont des détails internes (dépréciés
+comme points d'entrée).
 Options utiles : `./build.sh --help`, `./build.sh --check-only` (pré-vol sans
-build), `./build.sh --clean` (nettoyage).
+build), `./build.sh --clean` (nettoyage). Chaque build écrit `out/build.log`.
 
 Prérequis optionnels pour les tests graphiques : `sudo pacman -S edk2-ovmf qemu-desktop`.
 

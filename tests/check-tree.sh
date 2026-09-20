@@ -61,8 +61,13 @@ assert len(glob.glob(root + "/configs/kde/variants/plasma-*.conf")) == 6
 print("menu OK (%d outils)" % n)
 EOF
 [[ $? -eq 0 ]] || fail=1
-# Point d'entrée unique ./build.sh
-grep -q 'scripts/build-iso.sh' "$ROOT/build.sh" && echo "build orchestration OK" || { echo "build.sh n'orchestre pas scripts/build-iso.sh"; fail=1; }
+# Point d'entrée unique ./build.sh (autonome : mkarchiso + conteneur intégrés)
+grep -q 'mkarchiso' "$ROOT/build.sh" && echo "build mkarchiso OK" || { echo "build.sh: pas d'appel mkarchiso"; fail=1; }
+grep -q 'podman' "$ROOT/build.sh" || { echo "build.sh: pas de support conteneur"; fail=1; }
+grep -q 'ARCHRICING ISO BUILD FAILED' "$ROOT/build.sh" || { echo "build.sh: bannière FAILED manquante"; fail=1; }
+grep -q 'ARCHRICING BUILD ERROR' "$ROOT/build.sh" || { echo "build.sh: bannière BUILD ERROR manquante"; fail=1; }
+grep -q 'CD001' "$ROOT/build.sh" || { echo "build.sh: vérification magie ISO manquante"; fail=1; }
+echo "build internals OK"
 for flag in --help --check-only --clean; do
   grep -q -- "$flag" "$ROOT/build.sh" || { echo "build.sh: option $flag manquante"; fail=1; }
 done

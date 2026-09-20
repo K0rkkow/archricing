@@ -1,16 +1,19 @@
-# BUILD STATUS — audits pré-build réel (Phase 2 + Phase 3 éditions)
+# BUILD STATUS — audits pré-build réel (Phase 2 + Phase 3 éditions + Phase 4 build ISO)
 
 > Environnement d'audit : **Windows** (pas de build ISO possible ici).
 > Tout ce qui exige mkarchiso/pacman/QEMU/Plasma est marqué **NOT VERIFIED**
 > et doit être validé sur Arch Linux (voir `docs/build-windows.md`).
 > Date d'audit : 2026-09-20. Commande recommandée : `./build.sh` (racine,
-> point d'entrée unique ; `scripts/build-iso.sh` est un détail interne).
-> `tests/check-tree.sh` a été **réellement exécuté** via WSL bash le 2026-09-20 :
-> `ALL CHECKS PASSED` (bash -n, py_compile, wobbly, no-tiling, placement,
-> kitty, pacman.conf, bad-packages, editions sync, menu 54 outils, profile keys).
-> Les générateurs (`generate-menu.py`, `generate-variants.py`) ont été **réellement
-> exécutés** (54 .desktop + 12 .directory + 6 variantes, contenus spot-vérifiés).
-> Rien d'autre n'a été exécuté.
+> point d'entrée unique ; `scripts/build-iso.sh` et `iso/build.sh` sont des
+> relais dépréciés).
+> Statut ISO : **CODE READY — BUILD NOT TESTED** (jamais de vrai `mkarchiso`,
+> jamais booté ; vocabulaire exigé : pas de "bootable"/"validé" sans preuve).
+> `tests/check-tree.sh` : **réellement exécuté** via WSL bash — `ALL CHECKS PASSED`.
+> `tests/test-build.sh` (nouveau) : **réellement exécuté** via WSL bash —
+> **15 passed, 0 failed** (pipeline complet simulé : faux mkarchiso écrivant une
+> vraie magie CD001, faux pacman, bannières d'erreur, SHA256SUMS vérifié).
+> Les générateurs ont été **réellement exécutés** (54 .desktop + 12 .directory
+> + 6 variantes). Rien d'autre n'a été exécuté.
 
 ## VERIFIED (vérifié statiquement sur Windows)
 
@@ -39,10 +42,36 @@
 | 21 | Éditions (Phase 3) | `security-official.txt` (extra : masscan/wpscan/mullvad-vpn corrigés après vérification web) ; `security-aur.txt` avec confiance+fallback ; `packagechooser@edition.conf` synchronisé (pré-vol build + check-tree) ; `settings.conf` inclut `packagechooser@edition` + `archricing_experience` (show+exec) | check-tree "editions sync OK" |
 | 22 | Menu Security (Phase 3) | `security-tools.json` valide ; 54 `.desktop` + 12 `.directory` générés ; chaque pkg présent dans official/aur ; `validate-menu.sh` auto-désactive les binaires absents ; CLI via `archricing-terminal-exec` (kitty/konsole/system selon profil) | exécution réelle du générateur + check "menu OK" |
 | 23 | Profil Experience (Phase 3) | `install-profile.default.conf` (19 clés) == clés du module Calamares ; job d'écriture `/etc/archricing/install-profile.conf` ; `post-install.sh` applique dock×panel (6 variantes générées), transparence, blur, animations/performance, wobbly, coins, icônes, curseur, terminal, shell, fastfetch, starship, welcome, apps, édition Security (pacman + menu + service AUR + notice légale) | check "profile keys OK" + relecture |
+| 24 | Refonte build (Phase 4) | nouveau `build.sh` autonome : 8 étapes affichées, Arch natif + conteneur podman/docker (`archlinux:latest`, `/src`, `:z`, chown UID/GID), validation DB `pacman -Si` + séparation AUR explicite, compat `mkarchiso -w/-o`, assemblage sous `.build/` sans muter les sources, `airootfs` inclus dans le profil, wrappers settings/welcome générés, log `out/build.log`, magie CD001, SHA256SUMS, bannières FAILED/BUILD ERROR, jamais de succès sans ISO | `tests/test-build.sh` réel : 15/15 |
+
+## PHASE 4 — AUDIT DE L'ANCIEN SYSTÈME (défauts réels corrigés)
+
+1. **`iso/airootfs/` jamais embarqué** : l'ancien `iso/build.sh` passait à `mkarchiso`
+   une copie de `iso/profile/` seul, alors qu'archiso exige `airootfs/` **dans**
+   le dossier du profil. Toute la customisation live (skel, Calamares, binaires)
+   était silencieusement abandonnée. Le nouveau `build.sh` assemble
+   `.build/profile/` + `.build/profile/airootfs/` sans toucher aux sources.
+2. **Sources mutées** malgré le commentaire "ne mute jamais" (assets/calamares
+   écrits dans `iso/airootfs/`, backups dans le profil). Assemblage désormais
+   100 % sous `.build/` (gitignoré).
+3. **Délégation aveugle** `build.sh → scripts/build-iso.sh → iso/build.sh`
+   remplacée par un pipeline unique intégré (+ relais dépréciés qui préviennent).
+4. **Pas de validation DB** : seul un scan statique de noms interdits existait ;
+   un nom AUR ou renommé atteignait `mkarchiso` après 20 min de build. Maintenant
+   `pacman -Si` par paquet + refus AUR explicite **avant** le build.
+5. **Faux succès possible** : `ls -t out/*.iso` pouvait reprendre une ISO périmée.
+   Maintenant : ISO plus récente que le marqueur de début de build + taille>0 +
+   magie ISO9660, sinon échec.
+6. **Pas de log, pas de compat mkarchiso, pas de conteneur, Arch-only.**
+   Tous couverts (log temps réel, sonde `-w/-o/-r`, podman/docker, chown final).
+7. **Inconnu restant** : dossiers bootloader (`syslinux/`, `grub/`, `efiboot/`)
+   absents du profil — le build alerte (warning), le premier vrai `mkarchiso`
+   tranchera (possible ajout requis).
 
 ## NOT VERIFIED (exige une vraie machine Arch Linux — jamais prétendu testé ici)
 
-- `mkarchiso` : build réel (`./scripts/build-iso.sh`), taille ISO, `SHA256SUMS`.
+- `mkarchiso` réel via `./build.sh` (natif Arch ET via conteneur podman/docker),
+  taille ISO, `SHA256SUMS`, `out/build.log`.
 - Boot BIOS + UEFI (QEMU `test-qemu.sh`), session live Plasma autologin `liveuser`.
 - Rendu : transparence/blur Kitty, wobbly, dock/panneau, wallpapers, SDDM.
 - Réseau (NetworkManager/iwd), audio (PipeWire), Bluetooth, batterie/laptop, NVIDIA.

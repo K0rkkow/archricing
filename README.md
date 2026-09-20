@@ -47,15 +47,20 @@ cd archricing
 ./build.sh
 ```
 
-C'est tout : `./build.sh` vérifie le système, propose d'installer les dépendances
-manquantes, prépare l'environnement, lance archiso avec le profil ArchRicing et
-vérifie le résultat.
+C'est tout : `./build.sh` est le seul point d'entrée officiel. Il vérifie le
+système, propose d'installer les dépendances manquantes, prépare
+l'environnement, lance archiso avec le profil ArchRicing et vérifie le
+résultat. Sur Arch il build en natif ; sur Fedora/Debian/Ubuntu (et autres),
+il build automatiquement dans un conteneur `archlinux:latest` (podman ou
+docker). L'ISO est toujours produite par archiso/mkarchiso. Les scripts de
+`scripts/` et `iso/` sont des détails internes — ne les lancez pas directement.
 
 L'ISO sera disponible dans `out/` :
 
 ```bash
 out/archricing-YYYY.MM.DD-x86_64.iso
 out/SHA256SUMS
+out/build.log
 ```
 
 Détails : [`docs/installation.md`](docs/installation.md).
